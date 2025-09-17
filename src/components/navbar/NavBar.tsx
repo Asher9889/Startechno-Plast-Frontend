@@ -66,24 +66,53 @@ export default function Header() {
         {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
+            {/* Trigger button */}
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-text" />
+                <Menu size={18} className="text-text" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64 bg-surface flex flex-col">
-              <nav className="flex flex-col gap-6 mt-8 flex-1">
+
+            {/* Backdrop */}
+            <div
+              className={`fixed inset-0 z-40 bg-black/60 transition-opacity ${open ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+              onClick={() => setOpen(false)}
+            />
+
+            {/* Sidebar */}
+            <SheetContent
+              side="right"
+              className="z-50 w-72 bg-surface shadow-xl flex flex-col p-6 bg-blue-500"
+            >
+              {/* Close button */}
+              {/* <div className="flex justify-end">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setOpen(false)}
+                  className="rounded-full hover:bg-muted"
+                >
+                  ✕
+                </Button>
+              </div> */}
+
+              {/* Navigation */}
+              <nav className="flex flex-col gap-6 mt-6 flex-1">
                 {navLinks.map((link) => (
                   <a
                     key={link}
                     href="#"
-                    className="text-text hover:text-primary font-medium"
+                    className="text-lg text-text hover:text-primary font-medium transition-colors"
                     onClick={() => setOpen(false)}
                   >
                     {link}
                   </a>
                 ))}
+
                 <hr className="my-4 border-border" />
+
+                {/* Action Links */}
                 <div className="flex flex-col gap-4">
                   {actionLinks.map((action) => (
                     <a
@@ -105,6 +134,7 @@ export default function Header() {
             </SheetContent>
           </Sheet>
         </div>
+
       </div>
     </header>
   );
