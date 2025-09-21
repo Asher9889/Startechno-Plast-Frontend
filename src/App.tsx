@@ -3,15 +3,17 @@ import './App.css'
 import Home from './pages/home/Home'
 import { Route, Routes, useLocation } from 'react-router-dom';
 import routes from './routes';
-import { ContactUsFloating, Footer, Header, PageNotFound } from './components';
+import { Footer, Header, PageNotFound } from './components';
 import { Toaster } from 'sonner';
 
 async function loadPreline() {
   return import('preline/dist/index.js');
 }
 
-function App() {
+export type Theme = 'light' | 'dark';
 
+function App() {
+  const [theme, _] = useState("light");
   const location = useLocation();
 
   useEffect(() => {
@@ -29,18 +31,37 @@ function App() {
     initPreline();
   }, [location.pathname]);
 
-  const [theme, _] = useState("light");
+ 
 
   useEffect(() => {
-    import(`./themes/${theme}.css`);
+    // Remove any existing theme stylesheets
+    document.querySelectorAll('link[data-theme]').forEach(link => {
+      if (link.getAttribute('data-theme') !== theme) {
+        link.remove();
+      }
+    });
+
+    // Don't reload if already loaded
+    if (!document.querySelector(`link[data-theme="${theme}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = `./src/themes/${theme}.css`;
+      link.dataset.theme = theme;
+      link.onerror = () => {
+        console.error(`Failed to load ${theme} theme`);
+        // Optionally load a fallback theme
+      };
+      document.head.appendChild(link);
+    }
   }, [theme]);
+
 
 
   return (
     <div className=''>
       <Header />
       <Toaster richColors position="top-center" closeButton expand={true} />
-      <ContactUsFloating />
+      {/* <ContactUsFloating /> */}
       <Routes>
         {routes.map((r) => (
           <Route

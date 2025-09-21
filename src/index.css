@@ -1,20 +1,33 @@
+/* Import Poppins font with all weights and styles */
+
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 
+@import '@fontsource/poppins';
+
 /* Start Preline Config */
 @import "preline/variants.css";
-@source "../node_modules/preline/dist/*.js";
-
-/* Optional Preline UI Datepicker Plugin */
 /* @import "preline/src/plugins/datepicker/styles.css"; */
-
-/* Plugins */
-/* @plugin "@tailwindcss/forms"; */
-
 /* End Preline Config */
 
-@custom-variant dark (&:is(.dark *));
+/* Set Poppins as default font for the entire app */
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

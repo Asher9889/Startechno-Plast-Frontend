@@ -28,10 +28,11 @@ import CallNow from "./call-now/CallNow";
 
 
 
-
+AutoCarousel
 import BulkEnquiryForm from "./bulk-enquiry-fom/BulkEnquiryForm";
+import AutoCarousel from "./auto-corousel/AutoCorousel";
 
-export { BulkEnquiryForm }
+export { BulkEnquiryForm, AutoCarousel }
 
 
 

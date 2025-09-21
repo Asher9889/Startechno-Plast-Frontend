@@ -1,5 +1,12 @@
 :root {
 
+    --color-black-bg: #000000;
+    --color-white-text: #fff;
+    --color-white-bg: #fff;
+    --color-black-text: #000;
+    --color-blue: #6022ea;
+
+
 
     /* Primary Colors */
     --color-primary: #1a237e; /* Deep Indigo - premium & trustful */
@@ -28,4 +35,7 @@
  
 }
 
+body {
+    /* background-color: var(--color-black-bg); */
+}
 

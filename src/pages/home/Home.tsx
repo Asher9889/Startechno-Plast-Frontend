@@ -5,7 +5,7 @@ import WhyChoose from "./WhyChoose/Whychoose";
 
 import TopProducts from "./TopProducts/TopProducts";
 import FAQ from "./FAQ/FAQ";
-import AboutStartechnoPlast from "./about-techno-plast/AboutStartechnoPlast";
+// import AboutStartechnoPlast from "./about-techno-plast/AboutStartechnoPlast";
 import CustomerReviews from "./CustomerReviews/CustomerReviews";
 import CustomerEnquiryForm from "./CustomerEnquiryForm/CustomerEnquiryForm";
 
@@ -13,16 +13,12 @@ import CustomerEnquiryForm from "./CustomerEnquiryForm/CustomerEnquiryForm";
 
 const Home = () => {
     return (
-        <div className="bg-white">
-            {/* <SEO
-               page="home"
-            /> */}
-
+        <div className="">
             <HeroSection />
-            <BulkEnquiryForm />
+            {/* <BulkEnquiryForm /> */}
             <TopProducts />
             <WhyChoose />
-            <AboutStartechnoPlast />
+            {/* <AboutStartechnoPlast /> */}
             <CustomerReviews />
             <FAQ />
             <CustomerEnquiryForm />

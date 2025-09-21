@@ -1,19 +1,4 @@
-import { motion } from "framer-motion";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
-import { useState } from "react";
+import { useState } from "react"
 
 export default function BulkEnquiryForm() {
   const [form, setForm] = useState({
@@ -21,108 +6,94 @@ export default function BulkEnquiryForm() {
     phone: "",
     category: "",
     city: "",
-  });
+  })
 
-  const handleChange = (field: string, value: string) => {
-    setForm((prev) => ({ ...prev, [field]: value }));
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Submitted:", form);
-    // 👉 API integration goes here
-  };
+    e.preventDefault()
+    console.log("Form submitted:", form)
+  }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex justify-center items-center px-4 bg-white"
-    >
-      <div className="w-full max-w-md rounded-2xl shadow-xl border border-(--color-border)">
+    <div className="w-full">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-md rounded-2xl p-6 shadow-xl bg-(--color-white-bg) text-(--color-black-text)"
+      >
         {/* Header */}
-        <CardHeader className="bg-(--color-primary) text-white text-center rounded-t-2xl py-6">
-          <CardTitle className="text-xl font-semibold tracking-wide">
-            Bulk Enquiry Now
-          </CardTitle>
-          <p className="text-sm text-white/80 mt-1">
-            Get in touch for wholesale pricing
-          </p>
-        </CardHeader>
+        <div className="bg-(--color-blue) text-white text-center py-3 rounded-lg mb-6">
+          <h2 className="font-bold text-lg">BULK ENQUIRY NOW</h2>
+        </div>
 
-        {/* Body */}
-        <CardContent className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium text-(--color-text)">
-                Your Name <span className="text-(--color-error)">*</span>
-              </label>
-              <Input
-                placeholder="Enter your name"
-                value={form.name}
-                onChange={(e) => handleChange("name", e.target.value)}
-                required
-                className="mt-2 border border-(--color-border) focus:border-(--color-primary) focus:ring-2 focus:ring-(--color-primary-light)"
-              />
-            </div>
+        {/* Name */}
+        <label className="block mb-2 text-sm font-medium text-gray-700">
+          Your Name
+        </label>
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Enter your name"
+          className="w-full mb-4 rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        />
 
-            {/* Phone */}
-            <div>
-              <label className="block text-sm font-medium text-(--color-text)">
-                Phone Number <span className="text-(--color-error)">*</span>
-              </label>
-              <Input
-                placeholder="081234 56789"
-                value={form.phone}
-                onChange={(e) => handleChange("phone", e.target.value)}
-                required
-                className="mt-2 border border-(--color-border) focus:border-(--color-primary) focus:ring-2 focus:ring-(--color-primary-light)"
-              />
-            </div>
+        {/* Phone */}
+        <label className="block mb-2 text-sm font-medium text-gray-700">
+          Your Phone No.
+        </label>
+        <div className="flex items-center mb-4 rounded-md border border-gray-300 px-3 py-2 bg-white">
+          <span className="mr-2">🇮🇳 +91</span>
+          <input
+            type="tel"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="81234 56789"
+            className="flex-1 outline-none"
+          />
+        </div>
 
-            {/* Category */}
-            <div>
-              <label className="block text-sm font-medium text-(--color-text)">
-                Category
-              </label>
-              <Select onValueChange={(val) => handleChange("category", val)}>
-                <SelectTrigger className="mt-2 border border-(--color-border) focus:border-(--color-primary) focus:ring-2 focus:ring-(--color-primary-light)">
-                  <SelectValue placeholder="Select Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="cables">USB Cables</SelectItem>
-                  <SelectItem value="chargers">Chargers</SelectItem>
-                  <SelectItem value="adapters">Adapters</SelectItem>
-                  <SelectItem value="accessories">Mobile Accessories</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+        {/* Categories */}
+        <label className="block mb-2 text-sm font-medium text-gray-700">
+          Select Categories
+        </label>
+        <select
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+          className="w-full mb-4 rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        >
+          <option value="">Select Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="home">Home Appliances</option>
+        </select>
 
-            {/* City */}
-            <div>
-              <label className="block text-sm font-medium text-(--color-text)">
-                City
-              </label>
-              <Input
-                placeholder="Enter your city"
-                value={form.city}
-                onChange={(e) => handleChange("city", e.target.value)}
-                className="mt-2 border border-(--color-border) focus:border-(--color-primary) focus:ring-2 focus:ring-(--color-primary-light)"
-              />
-            </div>
+        {/* City */}
+        <label className="block mb-2 text-sm font-medium text-gray-700">
+          Your City
+        </label>
+        <input
+          type="text"
+          name="city"
+          value={form.city}
+          onChange={handleChange}
+          placeholder="Enter your city"
+          className="w-full mb-6 rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        />
 
-            {/* Submit */}
-            <Button
-              type="submit"
-              className="w-full bg-(--color-primary) text-white py-3 rounded-xl font-medium tracking-wide shadow-md hover:bg-(--color-primary-light) transition-colors"
-            >
-              Inquire Now
-            </Button>
-          </form>
-        </CardContent>
-      </div>
-    </motion.div>
-  );
+        {/* Submit */}
+        <button
+          type="submit"
+          className="w-full rounded-md bg-(--color-blue) text-white py-3 font-semibold hover:opacity-90 transition cursor-pointer hover:scale-[0.99]"
+        >
+          INQUIRE NOW
+        </button>
+      </form>
+    </div>
+  )
 }
