@@ -28,11 +28,11 @@ export default function AboutSection() {
         </div>
        
         {/* Bottom Features */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-4">
           <Card className="bg-[#0d1220] border-none shadow-md rounded-2xl">
             <CardContent className="p-6 text-center">
               <Truck className="mx-auto mb-3 text-blue-400" size={28} />
-              <h3 className="font-semibold">Fast & Reliable Delivery</h3>
+              <h3 className="font-semibold text-white">Fast & Reliable Delivery</h3>
               <p className="text-gray-400 text-sm mt-2">
                 Orders arrive safely and on time with real-time tracking support.
               </p>
@@ -42,7 +42,7 @@ export default function AboutSection() {
           <Card className="bg-[#0d1220] border-none shadow-md rounded-2xl">
             <CardContent className="p-6 text-center">
               <Layers className="mx-auto mb-3 text-green-400" size={28} />
-              <h3 className="font-semibold">Wide Variety of Choices</h3>
+              <h3 className="font-semibold text-white">Wide Variety of Choices</h3>
               <p className="text-gray-400 text-sm mt-2">
                 Explore an extensive collection of mobile accessories for every need.
               </p>
@@ -52,7 +52,7 @@ export default function AboutSection() {
           <Card className="bg-[#0d1220] border-none shadow-md rounded-2xl">
             <CardContent className="p-6 text-center">
               <ShieldCheck className="mx-auto mb-3 text-yellow-400" size={28} />
-              <h3 className="font-semibold">Customer-Centric Service</h3>
+              <h3 className="font-semibold text-white">Customer-Centric Service</h3>
               <p className="text-gray-400 text-sm mt-2">
                 Your satisfaction is our priority—quality products with dependable support.
               </p>
@@ -62,7 +62,7 @@ export default function AboutSection() {
           <Card className="bg-[#0d1220] border-none shadow-md rounded-2xl">
             <CardContent className="p-6 text-center">
               <ShieldCheck className="mx-auto mb-3 text-purple-400" size={28} />
-              <h3 className="font-semibold">Assured Quality Standards</h3>
+              <h3 className="font-semibold text-white">Assured Quality Standards</h3>
               <p className="text-gray-400 text-sm mt-2">
                 Every product passes strict quality checks for lasting performance.
               </p>

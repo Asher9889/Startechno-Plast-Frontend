@@ -51,7 +51,7 @@ export default function AutoCarousel() {
             <Card className="bg-[#0d1220] border-none shadow-lg rounded-2xl w-full h-full">
               <CardContent className="p-6 text-center flex flex-col items-center justify-center">
                 <Icon className="mx-auto mb-3 text-red-400" size={32} /> {/* ✅ render icon */}
-                <h3 className="text-lg font-semibold">{currentItem.title}</h3>
+                <h3 className="text-lg font-semibold text-white">{currentItem.title}</h3>
                 <p className="text-gray-400 text-sm mt-2">{currentItem.desc}</p>
               </CardContent>
             </Card>

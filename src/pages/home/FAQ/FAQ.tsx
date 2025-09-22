@@ -75,15 +75,15 @@ const FAQ = () => {
     ];
   
     return (
-      <div className="hs-accordion-group mx-auto max-w-5xl mt-8 bg-white">
+      <div className="hs-accordion-group mx-auto max-w-5xl">
         {faqs.map(({ id, question, answer }) => (
           <div
             key={id}
-            className="hs-accordion-to-destroy hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl"
+            className="hs-accordion-to-destroy hs-accordion hs-accordion-active:border-gray-200 border border-transparent rounded-xl bg-white my-4"
             id={`hs-destroy-heading-${id}`}
           >
             <button
-              className="hs-accordion-toggle hs-accordion-active:text-blue-600 inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500"
+              className="hs-accordion-toggle hs-accordion-active:text-blue-600 inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start bg-white  rounded-xl py-4 px-5 hover:text-gray-500"
               aria-expanded="false"
               aria-controls={`hs-destroy-collapse-${id}`}
             >

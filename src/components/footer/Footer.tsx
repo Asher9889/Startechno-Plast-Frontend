@@ -9,7 +9,7 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#002131] text-white pt-12">
+    <footer className="bg-gradient-to-br from-black via-[#0a0a1a] to-purple-900 text-white pt-12">
       {/* Top section */}
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
