@@ -1,34 +1,70 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
+import type { ReactNode } from "react";
+import { Star } from "lucide-react";
 
-export const 
-InfiniteMovingCards = ({
+export const renderStars = (rating: number) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(
+      <Star key={`full-${i}`} className="w-4 h-4 fill-orange-500 text-orange-500" />
+    );
+  }
+
+  if (hasHalfStar) {
+    stars.push(
+      <div key="half" className="relative">
+        <Star className="w-4 h-4 text-orange-500" />
+        <div className="absolute inset-0 w-2 h-4 overflow-hidden">
+          <Star className="w-4 h-4 fill-orange-500 text-orange-500" />
+        </div>
+      </div>
+    );
+  }
+
+  const emptyStars = 5 - Math.ceil(rating);
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(
+      <Star key={`empty-${i}`} className="w-4 h-4 text-gray-200 " />
+    );
+  }
+
+  return <div className="flex items-center gap-0.5">{stars}</div>;
+};
+
+export const InfiniteMovingCards = ({
   items,
   direction = "left",
-  speed = "slow",
+  speed = "fast",
   pauseOnHover = true,
   className,
+  children,
 }: {
   items: {
-    quote?: string;
+    rating?: number;
+    quote: string;
     name?: string;
-    title?: string;
-    icon?: any
+    title: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  children?: ReactNode;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
     addAnimation();
   }, []);
-  const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -45,78 +81,64 @@ InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards",
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse",
-        );
-      }
+      containerRef.current.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "forwards" : "reverse"
+      );
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
+      const duration = {
+        fast: "20s",
+        normal: "40s",
+        slow: "80s"
+      }[speed] || "40s";
+      
+      containerRef.current.style.setProperty("--animation-duration", duration);
     }
   };
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller  relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className,
+        "scroller relative z-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]",
+        className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4 bg-transparent",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-6 py-4",
           start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]",
+          pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, _) => (
-          <li
-            className="relative w-[200px]  shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 lg:w-[400px]"
-            key={item.name}
+        {children || items.map((item, idx) => (
+          <li 
+            key={`${item.title}-${idx}`}
+            className="relative w-[350px] max-w-full flex-shrink-0 rounded-lg bg-white  p-6 shadow-sm border border-gray-100  mx-2 h-64 flex flex-col justify-between"
           >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-lg leading-[1.6] font-normal text-neutral-800 flex flwx-row items-center gap-2 justify-start">
-                <item.icon className="h-6 w-6 text-purple-700" /> {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-lg leading-[1.6] font-normal text-neutral-500 ">
-                    {item.name}
-                  </span>
-                  <span className="text-lg leading-[1.6] font-normal text-neutral-500">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
-            </blockquote>
+            <div className="mb-4">
+              {item.rating !== undefined && renderStars(item.rating)}
+            </div>
+            <p className="text-gray-700  mb-6 italic line-clamp-4">
+              "{item.quote}
+            </p>
+            <div className="mt-auto">
+              <p className="font-medium text-gray-900 ">{item.title}</p>
+              {item.name && (
+                <p className="text-sm text-gray-500 ">{item.name}</p>
+              )}
+            </div>
           </li>
         ))}
       </ul>
     </div>
   );
 };
-
-
-export default InfiniteMovingCards;

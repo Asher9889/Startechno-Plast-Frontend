@@ -3,6 +3,27 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
 
+
+  const phoneNumber = "+919638500000";
+  const email = "info@startechnoplast.com";
+  const whatsappNumber = "+919638500000";
+  const whatsappMessage = "Hello, I would like to inquire about your products.";
+
+  const handleCall = () => {
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
+  const handleEmail = () => {
+    window.location.href = `mailto:${email}`;
+  };
+
+  const handleWhatsApp = () => {
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  };
+
+
+
   const dropDownClasses = "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  hover:bg-white hover:text-black focus:outline-hidden focus:bg-gray-100";
   return (
     <header className="border-b border-border text-white bg-(--color-black-bg)">
@@ -48,22 +69,17 @@ const Header = () => {
             <a href="#blogs" className="">Blogs</a>
           </nav>
 
-
-          {/* Hover effect for products */}
-
-         
-
           
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="hover:bg-white hover:text-black">
+            <Button onClick={handleCall} variant="ghost" size="sm" className="hover:bg-white hover:text-black">
               <Phone className="w-4 h-4 mr-2" />
               Call
             </Button>
-            <Button variant="ghost" size="sm" className="hover:bg-white hover:text-black">
+            <Button  onClick={handleEmail} variant="ghost" size="sm" className="hover:bg-white hover:text-black">
               <Mail className="w-4 h-4 mr-2" />
               Email
             </Button>
-            <Button variant="ghost" size="sm" className="hover:bg-white hover:text-black">
+            <Button onClick={handleWhatsApp} variant="ghost" size="sm" className="hover:bg-white hover:text-black">
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp
             </Button>

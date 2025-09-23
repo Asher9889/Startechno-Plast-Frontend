@@ -1,6 +1,6 @@
 import { AutoCarousel } from "@/components";
 import { Card, CardContent } from "@/components/ui/card";
-import { Truck, Layers, Headphones, ShieldCheck } from "lucide-react";
+import { Truck, Layers,  ShieldCheck } from "lucide-react";
 
 export default function AboutSection() {
   return (

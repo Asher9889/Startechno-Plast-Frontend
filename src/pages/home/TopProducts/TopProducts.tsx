@@ -1,33 +1,31 @@
-import { powerBank } from "@/assets";
+import { lighter, plugBody, powerBank, powerBankBody, speakerBody, speakerBox } from "@/assets";
 import { motion } from "framer-motion";
 
 
 const products = [
   { name: "Power Bank", image: powerBank },
+  { name: "Power Bank Covers", image: powerBankBody },
+  { name: "Plug Body", image: plugBody },
+  { name: "Speaker Box", image: speakerBox },
   {
     name: "Mobile Charger",
-    image:
-      "https://cdn.pixabay.com/photo/2018/07/01/13/28/two-pin-3509490_1280.jpg",
+    image: "https://cdn.pixabay.com/photo/2018/07/01/13/28/two-pin-3509490_1280.jpg",
   },
   {
     name: "Neckband",
-    image:
-      "https://cdn.pixabay.com/photo/2017/08/14/16/15/earphone-2640990_1280.jpg",
+    image: "https://cdn.pixabay.com/photo/2017/08/14/16/15/earphone-2640990_1280.jpg",
   },
   {
     name: "Speakers",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/04/21/58/speakers-971968_1280.png",
+    image: speakerBody,
   },
   {
     name: "Earbuds",
-    image:
-      "https://cdn.pixabay.com/photo/2015/11/25/21/38/xiao-us-1062989_1280.jpg",
+    image: "https://cdn.pixabay.com/photo/2015/11/25/21/38/xiao-us-1062989_1280.jpg",
   },
   {
     name: "Lighters",
-    image:
-      "https://cdn.pixabay.com/photo/2017/08/17/13/09/lighter-2651263_1280.jpg",
+    image: lighter,
   },
 ];
 

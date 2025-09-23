@@ -8,7 +8,7 @@ import { Spinner } from "./shadcn-io/spinner";
 import { Textarea } from "./textarea";
 import { Card, CardHeader, CardFooter, CardTitle, CardAction, CardDescription, CardContent } from "./card"
 import { GlowingEffect } from "./glowing-effect";
-import InfiniteMovingCards from "./infinite-moving-cards";
+import {InfiniteMovingCards} from "./infinite-moving-cards";
 import { CardBody, CardContainer, CardItem } from "./3d-card";
 import {   DropdownMenu,
   DropdownMenuPortal,
@@ -58,5 +58,6 @@ export { Input, Button, Checkbox, Dialog, Label,  Textarea, Select, SelectConten
     SheetHeader,
     SheetFooter,
     SheetTitle,
-    SheetDescription
+    SheetDescription,
+
  }

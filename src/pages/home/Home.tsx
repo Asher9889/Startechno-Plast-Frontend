@@ -1,4 +1,4 @@
-import { BulkEnquiryForm,  HeroSection} from "../../components";
+import {   HeroSection} from "../../components";
 // import AboutPureCheckup from "./AboutPureCheckup/AboutPureCheckup";
 
 import WhyChoose from "./WhyChoose/Whychoose";

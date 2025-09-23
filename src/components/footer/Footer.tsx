@@ -1,98 +1,89 @@
-import React from 'react';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-} from 'react-icons/fa';
+import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-black via-[#0a0a1a] to-purple-900 text-white pt-12">
-      {/* Top section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
-
-          {/* Logo and App download */}
-          {/* <div className="flex flex-col items-start gap-4">
-            <img src="/logo.svg" alt="PureCheckup" className="h-10" />
-            <h3 className="text-white text-lg font-semibold">Check out our app!</h3>
-            <div className="flex gap-3">
-              <img src="/google-play.png" alt="Google Play" className="h-10" />
-              <img src="/app-store.png" alt="App Store" className="h-10" />
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">Startechno Plast</h3>
+            <p className="text-gray-400">
+              Leading manufacturer of high-quality plastic products for various industries.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition">
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
-          </div> */}
+          </div>
 
-          {/* Footer Columns */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full">
-            {/* Column 1 */}
-            <div>
-              <h4 className="font-semibold text-white mb-4">Products</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Power Banks</li>
-                <li>Chargers</li>
-                <li>Bluetooth Speakers</li>
-                <li>NeckBanks</li>
-                <li>Earbugs</li>
-                <li>Electronic Lighters</li>
-              </ul>
-            </div>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Home</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">About Us</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Products</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Services</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
 
-            {/* Column 2 */}
-            {/* <div>
-              <h4 className="font-semibold text-white mb-4">For Patients</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>FAQs</li>
-                <li>Patient Help</li>
-                <li>No Cost EMI</li>
-                <li>Health Insurance</li>
-                <li>Doctors Section</li>
-              </ul>
-            </div> */}
+          {/* Products */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Products</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Plastic Containers</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Packaging Solutions</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Industrial Components</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">Custom Molding</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition">View All</a></li>
+            </ul>
+          </div>
 
-            {/* Column 3 */}
-
-
-            
-            {/* <div>
-              <h4 className="font-semibold text-white mb-4">Surgery</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Laser Surgery</li>
-                <li>Laparoscopy Surgery</li>
-                <li>Plastic Surgery</li>
-              </ul>
-             
-            </div> */}
-
-
-            {/* Column 4 */}
-            <div>
-              {/* Social Icons */}
-              <h4 className="font-semibold text-white mt-6 mb-2">Social Media</h4>
-              <div className="flex gap-3 text-white text-xl">
-                <FaFacebookF />
-                <FaInstagram />
-                <FaLinkedinIn />
-                <FaTwitter />
-                <FaYoutube />
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold">Contact Us</h4>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-400">123 Industrial Area, Phase 2, Mumbai, Maharashtra 400001</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-gray-400" />
+                <a href="tel:+911234567890" className="text-gray-400 hover:text-white transition">+91 8527374077</a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-gray-400" />
+                <a href="mailto:info@startechnoplast.com" className="text-gray-400 hover:text-white transition">Mukesh@startechnoplast.com</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-10 py-4 px-6 md:px-10 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
-        <p>© Copyright Startechno Plast 2025. All Right Reserved.</p>
-        <div className="flex gap-4 mt-2 md:mt-0">
-          <span>Terms & Conditions</span>
-          <span>Privacy Policy</span>
-          {/* <span>Refund Policy</span> */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              {new Date().getFullYear()} Startechno Plast. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition">Sitemap</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

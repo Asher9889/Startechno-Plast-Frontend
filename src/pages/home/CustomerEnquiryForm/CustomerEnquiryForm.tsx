@@ -23,7 +23,7 @@ const CustomerEnquiryForm = () => {
   return (
     <section className="w-full bg-[var(--color-bg)] py-16 px-6">
       <div className="max-w-3xl mx-auto bg-[var(--color-surface)] p-10 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-6 text-center">
+        <h2 className="text-3xl font-bold text-(--color-blue) mb-6 text-center">
           Customer Enquiry
         </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -68,13 +68,13 @@ const CustomerEnquiryForm = () => {
             placeholder="Your Message"
             rows={5}
             required
-            className="p-4 rounded-lg border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] transition resize-none"
+            className="p-4 rounded-lg border border-[var(--color-blue)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] transition resize-none"
           />
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white font-semibold py-4 rounded-lg transition"
+            className="bg-(--color-blue) hover:scale-[0.99] cursor-pointer text-white font-semibold py-4 rounded-lg transition"
           >
             Submit Enquiry
           </button>
