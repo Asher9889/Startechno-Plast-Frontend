@@ -45,7 +45,13 @@ function App() {
     if (!document.querySelector(`link[data-theme="${theme}"]`)) {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = `./src/themes/${theme}.css`;
+      
+      // Use different paths for development and production
+      const isDev = import.meta.env.DEV;
+      link.href = isDev 
+        ? `/src/themes/${theme}.css` 
+        : `/themes/${theme}.css`;
+        
       link.dataset.theme = theme;
       link.onerror = () => {
         console.error(`Failed to load ${theme} theme`);

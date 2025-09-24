@@ -11,4 +11,20 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    assetsDir: 'assets',
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          // Keep theme files in their original directory structure
+          if (assetInfo.name?.endsWith('.css') && assetInfo.name.includes('themes/')) {
+            return `themes/[name][extname]`
+          }
+          return 'assets/[name]-[hash][extname]'
+        }
+      }
+    }
+  },
+  publicDir: 'public',
 })
