@@ -31,35 +31,10 @@ function App() {
     initPreline();
   }, [location.pathname]);
 
- 
-
   useEffect(() => {
-    // Remove any existing theme stylesheets
-    document.querySelectorAll('link[data-theme]').forEach(link => {
-      if (link.getAttribute('data-theme') !== theme) {
-        link.remove();
-      }
-    });
-
-    // Don't reload if already loaded
-    if (!document.querySelector(`link[data-theme="${theme}"]`)) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      
-      // Use different paths for development and production
-      const isDev = import.meta.env.DEV;
-      link.href = isDev 
-        ? `/src/themes/${theme}.css` 
-        : `/themes/${theme}.css`;
-        
-      link.dataset.theme = theme;
-      link.onerror = () => {
-        console.error(`Failed to load ${theme} theme`);
-        // Optionally load a fallback theme
-      };
-      document.head.appendChild(link);
-    }
+    import(`./themes/${theme}.css`);
   }, [theme]);
+
 
 
 
