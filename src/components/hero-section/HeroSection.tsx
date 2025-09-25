@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import BulkEnquiryForm from "../bulk-enquiry-fom/BulkEnquiryForm";
+import { ownerDetails } from "@/config";
 
 export default function HeroSection() {
   // const handleSubmit = (e: React.FormEvent) => {
@@ -33,7 +34,7 @@ export default function HeroSection() {
             </motion.h1>
           </div>
 
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -42,7 +43,7 @@ export default function HeroSection() {
             Startechno Plast is redefining quality with premium USB cables, adapters, and a
             complete range of modern mobile accessories. Designed for durability, engineered for
             trust.
-          </motion.p>
+          </motion.h2>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -50,15 +51,18 @@ export default function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-wrap gap-4"
           >
+            <a href={`mailto:${ownerDetails.email}`}>
+
             <Button
               className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
-                         shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
-                         transition-transform"
-            >
+              shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
+              transition-transform"
+              >
               Explore Products
             </Button>
+              </a>
 
-            <a href="tel:+911234567890">
+            <a href={`tel:+91${ownerDetails.phoneNo}`}>
               <Button
                 className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
                 shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
