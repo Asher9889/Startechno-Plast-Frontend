@@ -20,7 +20,7 @@ import Button from "./ui/stateful-button";
 import StickyScroll from "./ui/sticky-scroll-reveal";
 import WobbleCard from "./ui/wobble-card";
 import WhyPureCheckup from "./why-purecheckup/WhyPureCheckup";
-import SEO from "./SEO/SEO";
+// import SEO from "./SEO/SEO";
 import ContactUsFloating from "./contact-us-floating/ContantUsFloating";
 import CallNow from "./call-now/CallNow";
 
@@ -38,6 +38,6 @@ export { BulkEnquiryForm, AutoCarousel }
 
 
 export {
-    Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, WhyPureCheckup, Doctors3DGrid, Heading, TopCities, SEO, ContactUsFloating, CallNow
+    Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, WhyPureCheckup, Doctors3DGrid, Heading, TopCities,  ContactUsFloating, CallNow
  
 }

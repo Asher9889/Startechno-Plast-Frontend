@@ -1,4 +1,4 @@
-import {   HeroSection} from "../../components";
+import { HeroSection } from "../../components";
 // import AboutPureCheckup from "./AboutPureCheckup/AboutPureCheckup";
 
 import WhyChoose from "./WhyChoose/Whychoose";
@@ -20,12 +20,8 @@ const Home = () => {
             <WhyChoose />
             {/* <AboutStartechnoPlast /> */}
             <CustomerReviews />
-            <section className="bg-gradient-to-br from-black via-[#0a0a1a] to-purple-900">
-
-            <section className="py-20">
-
-            <FAQ />
-            </section>
+            <section className="bg-gradient-to-br from-black via-[#0a0a1a] to-purple-900 py-20 px-3">
+                <FAQ />
             </section>
             <CustomerEnquiryForm />
 

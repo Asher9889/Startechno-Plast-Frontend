@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from 'luc
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-(--color-black-bg) text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {nav.map((title, _) => (<li><a href={title} className="text-gray-400 hover:text-white transition">{title}</a></li>))}
+              {nav.map((title, _) => (<li><a href="#" className="text-gray-400 hover:text-white transition">{title}</a></li>))}
             </ul>
           </div>
 
