@@ -8,7 +8,6 @@ import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Heading from "./heading/Heading";
 import HeroSectionOne from "./hero-section-demo-1";
-import DynamicHeroSection from "./hero-section/DynamicHeroSection";
 import HeroSection from "./hero-section/HeroSection";
 import Navbar from "./navbar/NavBar";
 import TopCities from "./our-presence/TopCities";
@@ -39,6 +38,6 @@ export { BulkEnquiryForm, AutoCarousel }
 
 
 export {
-    Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, DynamicHeroSection, WhyPureCheckup, Doctors3DGrid, Heading, TopCities, SEO, ContactUsFloating, CallNow
+    Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, WhyPureCheckup, Doctors3DGrid, Heading, TopCities, SEO, ContactUsFloating, CallNow
  
 }

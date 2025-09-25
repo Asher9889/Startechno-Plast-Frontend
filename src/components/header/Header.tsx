@@ -1,25 +1,20 @@
 import { Phone, Mail, MessageCircle, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ownerDetails } from "@/config/constants/data";
 
 const Header = () => {
 
-
-  const phoneNumber = "+919638500000";
-  const email = "info@startechnoplast.com";
-  const whatsappNumber = "+919638500000";
-  const whatsappMessage = "Hello, I would like to inquire about your products.";
-
   const handleCall = () => {
-    window.location.href = `tel:${phoneNumber}`;
+    window.location.href = `tel:${ownerDetails.phoneNo}`;
   };
 
   const handleEmail = () => {
-    window.location.href = `mailto:${email}`;
+    window.location.href = `mailto:${ownerDetails.email}`;
   };
 
   const handleWhatsApp = () => {
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    const encodedMessage = encodeURIComponent(ownerDetails.whatsaapWelcomeMessage);
+    window.open(`https://wa.me/${ownerDetails.whatsaapNo}?text=${encodedMessage}`, '_blank');
   };
 
 

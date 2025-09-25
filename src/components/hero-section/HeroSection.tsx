@@ -58,14 +58,15 @@ export default function HeroSection() {
               Explore Products
             </Button>
 
-
-            <Button
-              className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
-                         shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
-                         transition-transform"
-            >
-              Call Us Now
-            </Button>
+            <a href="tel:+911234567890">
+              <Button
+                className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
+                shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
+                transition-transform"
+                >
+                Call Us Now
+              </Button>
+            </a>
           </motion.div>
 
           {/* <motion.p
@@ -81,9 +82,9 @@ export default function HeroSection() {
         {/* CONTACT FORM */}
         <div className="flex flex-1 justify-end">
 
-        <div className="w-md">
-          <BulkEnquiryForm />
-        </div>
+          <div className="w-md">
+            <BulkEnquiryForm />
+          </div>
         </div>
       </div>
     </section>

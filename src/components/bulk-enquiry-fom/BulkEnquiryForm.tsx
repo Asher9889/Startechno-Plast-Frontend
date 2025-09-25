@@ -1,3 +1,4 @@
+import { category } from "@/config"
 import { useState } from "react"
 
 export default function BulkEnquiryForm() {
@@ -61,16 +62,16 @@ export default function BulkEnquiryForm() {
         <label className="block mb-2 text-sm font-medium text-gray-700">
           Select Categories
         </label>
+        
         <select
           name="category"
           value={form.category}
           onChange={handleChange}
           className="w-full mb-4 rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
         >
-          <option value="">Select Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="fashion">Fashion</option>
-          <option value="home">Home Appliances</option>
+          {category.map((cat, _) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
         </select>
 
         {/* City */}

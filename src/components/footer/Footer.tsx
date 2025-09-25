@@ -1,3 +1,5 @@
+import { category, nav } from '@/config';
+import { ownerDetails } from '@/config/constants/data';
 import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
@@ -28,14 +30,11 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
+          
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Products</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Contact</a></li>
+              {nav.map((title, _) => (<li><a href={title} className="text-gray-400 hover:text-white transition">{title}</a></li>))}
             </ul>
           </div>
 
@@ -43,11 +42,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Products</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Plastic Containers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Packaging Solutions</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Industrial Components</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Custom Molding</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">View All</a></li>
+              {category.map((cate, _) => (<li><a href="#" className="text-gray-400 hover:text-white transition">{cate}</a></li>))}
             </ul>
           </div>
 
@@ -57,15 +52,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400">123 Industrial Area, Phase 2, Mumbai, Maharashtra 400001</span>
+                <span className="text-gray-400">{ownerDetails.address}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-gray-400" />
-                <a href="tel:+911234567890" className="text-gray-400 hover:text-white transition">+91 8527374077</a>
+                <a href={`tel:+91${ownerDetails.phoneNo}`} className="text-gray-400 hover:text-white transition">+91 {ownerDetails.phoneNo}</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gray-400" />
-                <a href="mailto:info@startechnoplast.com" className="text-gray-400 hover:text-white transition">Mukesh@startechnoplast.com</a>
+                <a href={`mailto:${ownerDetails.email}`} className="text-gray-400 hover:text-white transition">{ownerDetails.email}</a>
               </div>
             </div>
           </div>
