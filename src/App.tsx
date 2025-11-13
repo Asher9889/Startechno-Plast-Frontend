@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react';
-import './App.css'
-import Home from './pages/home/Home'
-import { Route, Routes, useLocation } from 'react-router-dom';
-import routes from './routes';
-import { Footer, Header, PageNotFound } from './components';
-import { Toaster } from 'sonner';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Home from "./pages/home/Home";
+import { Route, Routes, useLocation } from "react-router-dom";
+import routes from "./routes";
+import { Footer, Header, PageNotFound } from "./components";
+import { Toaster } from "sonner";
+import AboutUs from "./pages/aboutus/AboutUs";
 
 async function loadPreline() {
-  return import('preline/dist/index.js');
+  return import("preline/dist/index.js");
 }
 
-export type Theme = 'light' | 'dark';
+export type Theme = "light" | "dark";
 
 function App() {
   const [theme, _] = useState("light");
@@ -22,7 +23,7 @@ function App() {
 
       if (
         window.HSStaticMethods &&
-        typeof window.HSStaticMethods.autoInit === 'function'
+        typeof window.HSStaticMethods.autoInit === "function"
       ) {
         window.HSStaticMethods.autoInit();
       }
@@ -35,11 +36,8 @@ function App() {
     import(`./themes/${theme}.css`);
   }, [theme]);
 
-
-
-
   return (
-    <div className=''>
+    <div className="">
       <Header />
       <Toaster richColors position="top-center" closeButton expand={true} />
       {/* <ContactUsFloating /> */}
@@ -54,13 +52,14 @@ function App() {
 
         {/* Home Route */}
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
 
         {/* Catch-all route */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
