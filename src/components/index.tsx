@@ -24,20 +24,17 @@ import WhyPureCheckup from "./why-purecheckup/WhyPureCheckup";
 import ContactUsFloating from "./contact-us-floating/ContantUsFloating";
 import CallNow from "./call-now/CallNow";
 
-
-
-
-AutoCarousel
 import BulkEnquiryForm from "./bulk-enquiry-fom/BulkEnquiryForm";
 import AutoCarousel from "./auto-corousel/AutoCorousel";
 
 export { BulkEnquiryForm, AutoCarousel }
 
-
+import FAQ from "./faqs/FAQ";
+import SmartButton from "./common/SmartButton";
 
 
 
 export {
-    Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, WhyPureCheckup, Doctors3DGrid, Heading, TopCities,  ContactUsFloating, CallNow
+    SmartButton, FAQ, Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, WhyPureCheckup, Doctors3DGrid, Heading, TopCities,  ContactUsFloating, CallNow
  
 }

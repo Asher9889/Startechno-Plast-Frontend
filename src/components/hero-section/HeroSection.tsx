@@ -10,7 +10,7 @@ export default function HeroSection() {
   // };
 
   return (
-    <section className=" py-10 bg-gradient-to-br from-black via-[#0a0a1a] to-purple-900 relative w-full text-(--color-white-text)">
+    <section className=" py-10 bg-gradient-br relative w-full text-(--color-white-text)">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between gap-10 md:gap-4">
         {/* LEFT CONTENT */}
         <motion.div
