@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { Toaster } from "sonner";
+import "./App.css";
 import routes from "./routes";
 import { Footer, Header, PageNotFound } from "./components";
-import { Toaster } from "sonner";
-
 
 async function loadPreline() {
   return import("preline/dist/index.js");
@@ -48,6 +47,7 @@ function App() {
             element={r.element ? <r.element /> : <PageNotFound />}
           />
         ))}
+
         {/* Catch-all route */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>

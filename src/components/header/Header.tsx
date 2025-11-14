@@ -12,10 +12,12 @@ const RoutesJSX = () => {
     if (item.children.length === 0 || !item.children) {
       return (
         console.log("item", item),
-        <Link to={item.path} key={item.name} className=" transition-colors">
-          {item.name}
-        </Link>
-      )
+        (
+          <Link to={item.path} key={item.name} className=" transition-colors">
+            {item.name}
+          </Link>
+        )
+      );
     }
     return (
       <div className="m-1 hs-dropdown [--trigger:hover] relative inline-flex">
@@ -53,22 +55,22 @@ const RoutesJSX = () => {
           <div className="p-1 space-y-0.5">
             {item.children.map((child) => {
               return (
-                <Link className={`${dropDownClasses}`} to={child.path} key={child.name}>
+                <Link
+                  className={`${dropDownClasses}`}
+                  to={child.path}
+                  key={child.name}
+                >
                   {child.name}
                 </Link>
-              )
+              );
             })}
           </div>
         </div>
       </div>
-    )
-  })
-  return (
-    <>
-      {routesJSX}
-    </>
-  )
-}
+    );
+  });
+  return <>{routesJSX}</>;
+};
 
 const Header = () => {
   const handleCall = () => {
@@ -88,6 +90,9 @@ const Header = () => {
       "_blank"
     );
   };
+
+  const dropDownClasses =
+    "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  hover:bg-white hover:text-black focus:outline-hidden focus:bg-gray-100";
   return (
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
