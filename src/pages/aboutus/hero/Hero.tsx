@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { SmartButton } from "@/components";
 
 export default function Hero() {
   return (
@@ -29,16 +29,17 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="flex gap-4 flex-wrap justify-center"
       >
-        <Button className="hover:bg-(--color-primary) transition-all duration-300 bg-(--color-blue-button)  hover:scale-[1.002] px-6 py-5 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
+        {/* <SmartButton icon={"📩"} >Get a Quote</SmartButton> */}
+        <SmartButton className="hover:bg-(--color-primary) bg-(--color-blue-button)">
           <span>📩</span> Get a Quote
-        </Button>
+        </SmartButton>
 
-        <Button
+        <SmartButton
           variant="outline"
-          className="border-none hover:bg-(--whatsaap-color) hover:text-black transition-all duration-300 px-6 py-5 rounded-xl text-sm flex items-center gap-2 bg-(--whatsaap-color) cursor-pointer"
+          className="border-none hover:bg-[#075e54] bg-(--whatsaap-color) hover:text-white"
         >
           <span>💬</span> Connect via WhatsApp
-        </Button>
+        </SmartButton>
       </motion.div>
     </section>
   );

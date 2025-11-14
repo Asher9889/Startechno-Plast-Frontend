@@ -30,7 +30,7 @@ export default function SmartButton({
       onClick={onClick}
       size={size}
       variant={variant}
-      className={cn("flex items-center gap-2", className)}
+      className={cn("flex items-center gap-2 transition-all duration-300 hover:scale-[1.009] px-6 py-5 rounded-lg text-sm cursor-pointer", className)}
       disabled={isLoading}
     >
       {/* Left Icon */}
