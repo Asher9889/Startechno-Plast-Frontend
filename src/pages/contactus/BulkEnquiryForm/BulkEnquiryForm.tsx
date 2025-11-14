@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -9,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
-export default function BulkEnquiryForm() {
+const BulkEnquiryFormforContact = () => {
   return (
     <section className="w-full max-w-md mx-auto bg-white shadow-lg rounded-xl overflow-hidden border">
       {/* Header */}
@@ -21,7 +20,10 @@ export default function BulkEnquiryForm() {
         {/* Name */}
         <div>
           <label className="text-sm font-medium text-gray-700">Your Name</label>
-          <Input placeholder="Enter your name" className="mt-1" />
+          <Input
+            placeholder="Enter your name"
+            className="mt-1 text-black placeholder:text-gray-500"
+          />
         </div>
 
         {/* Phone Number */}
@@ -33,7 +35,10 @@ export default function BulkEnquiryForm() {
             <div className="min-w-[80px] bg-gray-100 flex items-center justify-center font-medium text-gray-700 rounded-md border px-2">
               IN +91
             </div>
-            <Input placeholder="81234 56789" />
+            <Input
+              placeholder="81234 56789"
+              className="text-black placeholder:text-gray-500"
+            />
           </div>
         </div>
 
@@ -43,7 +48,7 @@ export default function BulkEnquiryForm() {
             Select Categories
           </label>
           <Select>
-            <SelectTrigger className="mt-1">
+            <SelectTrigger className="mt-1 text-black placeholder:text-gray-500">
               <SelectValue placeholder="Choose a category" />
             </SelectTrigger>
             <SelectContent>
@@ -57,7 +62,10 @@ export default function BulkEnquiryForm() {
         {/* City */}
         <div>
           <label className="text-sm font-medium text-gray-700">Your City</label>
-          <Input placeholder="Enter your city" className="mt-1" />
+          <Input
+            placeholder="Enter your city"
+            className="mt-1 text-black placeholder:text-gray-500"
+          />
         </div>
 
         {/* CTA */}
@@ -72,4 +80,6 @@ export default function BulkEnquiryForm() {
       </div>
     </section>
   );
-}
+};
+
+export default BulkEnquiryFormforContact;

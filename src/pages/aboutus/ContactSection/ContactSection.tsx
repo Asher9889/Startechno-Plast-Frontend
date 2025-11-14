@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ContactInfoPanel } from "./ContactInfoPanel";
+import { ContactInfoPanel } from "../ContactInfoPanel/ContactInfoPanel";
 import { InquiryFormPanel } from "@/components/contact-section/InquiryFormPanel";
 
 export default function ContactSection() {

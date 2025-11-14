@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 // import Hero from "./Hero";
 import Hero from "./hero/Hero";
-import ContactSection from "./hero/ContactSection";
-import ConnectWithUs from "./hero/ConnectWithUs";
-import WhyPartner from "./hero/WhyPartner";
+import ContactSection from "./ContactSection/ContactSection";
+import ConnectWithUs from "./ConnectWithUs/ConnectWithUs";
+import WhyPartner from "./WhyPartner/WhyPartner";
 import { FAQ } from "@/components";
 
 export const faqData = [
   {
     id: "one",
-    question: "What types of plastic products does Star Technoplast manufacture?",
+    question:
+      "What types of plastic products does Star Technoplast manufacture?",
     answer:
       "Star Technoplast specializes in precision-engineered plastic components, injection-molded parts, and customized plastic solutions for various industries, including automotive, electrical, FMCG, and healthcare.",
   },
@@ -58,15 +59,13 @@ export const faqData = [
   },
   {
     id: "nine",
-    question:
-      "Can I visit the manufacturing unit for a project discussion?",
+    question: "Can I visit the manufacturing unit for a project discussion?",
     answer:
       "Yes, clients are welcome to visit our manufacturing facility in Sonipat for project discussions or factory audits. Please schedule your visit in advance through our contact form or by phone.",
   },
   {
     id: "ten",
-    question:
-      "How does Star Technoplast ensure product quality and precision?",
+    question: "How does Star Technoplast ensure product quality and precision?",
     answer:
       "Our facility follows strict ISO-certified quality standards, using high-precision molds, modern injection molding machines, and multi-stage inspections to guarantee product accuracy and consistency.",
   },
@@ -112,10 +111,9 @@ export default function AboutUs() {
         viewport={{ once: true }}
         className="bg-gray-50"
       >
-         <section className="bg-gradient-br py-20 px-3">
-                
-                <FAQ faqs={faqData} />
-            </section>
+        <section className="bg-gradient-br py-20 px-3">
+          <FAQ faqs={faqData} />
+        </section>
       </motion.div>
 
       {/* Why Partner */}

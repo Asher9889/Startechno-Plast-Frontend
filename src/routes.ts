@@ -1,6 +1,7 @@
 import { Stethoscope, Microscope, HeartPulse, Baby, Sparkles } from "lucide-react";
 import { PageNotFound } from "./components";
 import { AboutUs, Home } from "./pages";
+import ContactUsPage from "./pages/contactus/ContactUsPage";
 
 // ---------------- NAV DATA WITH ROUTES ----------------
 
@@ -39,7 +40,7 @@ export const navItems = [
     path: "/contact",
     skip: false,
     icon: Baby,
-    element: PageNotFound,
+    element: ContactUsPage,
     children: [],
   },
   {
