@@ -1,79 +1,3 @@
-// import { Card } from "@/components/ui/card";
-// import { Button } from "@/components/ui/button";
-// import { motion } from "framer-motion";
-// import {
-//   ShieldCheck,
-//   Calendar,
-//   Grid2X2,
-//   Truck,
-//   LifeBuoy,
-//   ArrowUp,
-// } from "lucide-react";
-
-// const features = [
-//   { icon: ShieldCheck, text: "ISO-Certified Manufacturing" },
-//   { icon: Calendar, text: "20+ Years of Experience" },
-//   { icon: Grid2X2, text: "In-house Tooling & Molding" },
-//   { icon: Truck, text: "Pan-India Delivery" },
-//   { icon: LifeBuoy, text: "Reliable Support" },
-// ];
-
-// export default function WhyPartner() {
-//   return (
-//     <section className="w-full px-4 py-10 bg-[#E9F4EF]">
-//       <div className="max-w-6xl mx-auto">
-//         {/* Title */}
-//         <motion.h2
-//           initial={{ opacity: 0, y: -10 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.4 }}
-//           className="text-lg md:text-xl font-semibold mb-6"
-//         >
-//           Why Partner with Star Technoplast
-//         </motion.h2>
-
-//         {/* Feature Cards */}
-//         <div className="flex flex-wrap gap-4 mb-6">
-//           {features.map((item, i) => (
-//             <motion.div
-//               key={i}
-//               initial={{ opacity: 0, y: 10 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.4, delay: i * 0.1 }}
-//             >
-//               <Card className="px-5 py-3 rounded-xl flex items-center gap-2 bg-white shadow-sm border cursor-pointer hover:shadow-md transition">
-//                 <item.icon size={18} className="text-gray-700" />
-//                 <span className="text-sm text-gray-700 whitespace-nowrap">
-//                   {item.text}
-//                 </span>
-//               </Card>
-//             </motion.div>
-//           ))}
-//         </div>
-
-//         {/* Bottom Row */}
-//         <div className="flex items-center justify-between mt-4">
-//           {/* Back to Top */}
-//           <button
-//             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-//             className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-800 transition"
-//           >
-//             <ArrowUp size={16} /> Top
-//           </button>
-
-//           {/* WhatsApp Chat */}
-//           <Button
-//             className="bg-green-600 hover:bg-green-700 text-white rounded-full px-6 py-2 flex items-center gap-2 text-sm cursor-pointer"
-//             onClick={() => window.open("https://wa.me/9034484988", "_blank")}
-//           >
-//             <LifeBuoy size={16} /> WhatsApp Chat
-//           </Button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -118,12 +42,12 @@ const features = [
 
 export default function WhyPartner() {
   return (
-    <section className="w-full px-4 py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+    <section className="w-full  mx-auto px-4 py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-[#6022ea]/10 to-[#6022ea]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-[#6022ea]/10 to-[#6022ea]/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl" />
 
-      <div className="mx-auto relative z-10">
+      <div className="mx-auto max-w-7xl relative z-10">
         {/* Enhanced Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

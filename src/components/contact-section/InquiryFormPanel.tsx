@@ -73,10 +73,6 @@ export function InquiryFormPanel() {
         </SelectContent>
       </Select>
 
-      <p className="px-4 py-3 bg-green-600 text-white rounded-md text-sm w-fit">
-        ✔ Real-time validation active
-      </p>
-
       <Button className="bg-[#0A3D62] hover:bg-[#082F4D] text-white px-6 py-6 rounded-xl text-sm flex items-center gap-2">
         <Send size={16} /> Send Inquiry
       </Button>
