@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Home from "./pages/home/Home";
 import { Route, Routes, useLocation } from "react-router-dom";
 import routes from "./routes";
 import { Footer, Header, PageNotFound } from "./components";
 import { Toaster } from "sonner";
-import AboutUs from "./pages/aboutus/AboutUs";
+
 
 async function loadPreline() {
   return import("preline/dist/index.js");
@@ -49,11 +48,6 @@ function App() {
             element={r.element ? <r.element /> : <PageNotFound />}
           />
         ))}
-
-        {/* Home Route */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-
         {/* Catch-all route */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
