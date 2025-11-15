@@ -1,4 +1,4 @@
-import Doctors3DGrid  from "./3d-grid/Doctor3DGrid";
+import Doctors3DGrid from "./3d-grid/Doctor3DGrid";
 import AppointForm from "./book-appointment-form/AppointForm";
 import AppointFormWithNoReason from "./book-appointment-form/AppointFormWithReason";
 import BookNowButton from "./book-now-button/BookNowButton";
@@ -26,15 +26,41 @@ import CallNow from "./call-now/CallNow";
 
 import BulkEnquiryForm from "./bulk-enquiry-fom/BulkEnquiryForm";
 import AutoCarousel from "./auto-corousel/AutoCorousel";
+import CustomerEnquiryForm from "./customer-enquiry/CustomerEnquiryForm";
+import { useScroll } from "./scroll-context/ScrollContext";
 
-export { BulkEnquiryForm, AutoCarousel }
+export { BulkEnquiryForm, AutoCarousel };
 
 import FAQ from "./faqs/FAQ";
 import SmartButton from "./common/SmartButton";
 
-
-
 export {
-    SmartButton, FAQ, Footer, Header, Navbar, SpecialtyNav, HeroSection, ContactSection, BookNowButton, Sidebar, AppointForm, DiseasesInput, PageNotFound, SelectCityInput, AppointFormWithNoReason, WobbleCard, HeroSectionOne, Button as WhatsaapButton, BackgroundBeams, StickyScroll, WhyPureCheckup, Doctors3DGrid, Heading, TopCities,  ContactUsFloating, CallNow
- 
-}
+  SmartButton,
+  FAQ,
+  Footer,
+  Header,
+  Navbar,
+  SpecialtyNav,
+  HeroSection,
+  ContactSection,
+  BookNowButton,
+  Sidebar,
+  AppointForm,
+  DiseasesInput,
+  PageNotFound,
+  SelectCityInput,
+  AppointFormWithNoReason,
+  WobbleCard,
+  HeroSectionOne,
+  Button as WhatsaapButton,
+  BackgroundBeams,
+  StickyScroll,
+  WhyPureCheckup,
+  Doctors3DGrid,
+  Heading,
+  TopCities,
+  ContactUsFloating,
+  CallNow,
+  CustomerEnquiryForm,
+  useScroll,
+};
