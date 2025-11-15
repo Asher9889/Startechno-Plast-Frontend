@@ -127,15 +127,15 @@ const Sidebar = () => {
                         aria-labelledby={`${name}-accordion`}
                       >
                         <ul className="pt-1 ps-7 space-y-1">
-                          {children.map(({ label, path }) => {
+                          {children.map(({ name, path }) => {
                             // const link = ();
                             return (
-                            <li key={label}>
+                            <li key={name}>
                               <Link
                                 to={path}
                                 className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg text-(--sidebar-text) hover:bg-(--sidebar-hover-bg) hover:text-(--sidebar-text-hover focus:outline-hidden focus:bg-(--sidebar-active-bg) focus:text-(--sidebar-text-active)"
                               >
-                                {label}
+                                {name}
                               </Link>
                             </li>
                           )})}

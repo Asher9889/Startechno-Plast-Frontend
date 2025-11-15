@@ -91,9 +91,7 @@ const Header = () => {
     );
   };
 
-  const dropDownClasses =
-    "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  hover:bg-white hover:text-black focus:outline-hidden focus:bg-gray-100";
-  return (
+return (
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">

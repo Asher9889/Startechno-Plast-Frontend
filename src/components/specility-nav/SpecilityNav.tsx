@@ -26,11 +26,11 @@ const SpecialtyNav = () => {
                   {item.children.map((child) => {
                     return (
                     <Link
-                      key={child.label}
+                      key={child.name}
                       to={child.path}
                       className="text-nowrap block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition"
                     >
-                      {child.label}
+                      {child.name}
                     </Link>
                   )})}
                 </div>
