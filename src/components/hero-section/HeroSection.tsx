@@ -1,14 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import BulkEnquiryForm from "../bulk-enquiry-fom/BulkEnquiryForm";
 import { ownerDetails } from "@/config";
+import { BulkEnquiryForm } from "@/components";
 
 export default function HeroSection() {
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Handle form submission here
-  // };
-
   return (
     <section className=" py-10 bg-gradient-br relative w-full text-(--color-white-text)">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between gap-10 md:gap-4">
@@ -40,9 +35,9 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg text-(--color-text-muted) max-w-lg leading-7"
           >
-            Startechno Plast is redefining quality with premium USB cables, adapters, and a
-            complete range of modern mobile accessories. Designed for durability, engineered for
-            trust.
+            Startechno Plast is redefining quality with premium USB cables,
+            adapters, and a complete range of modern mobile accessories.
+            Designed for durability, engineered for trust.
           </motion.h2>
 
           <motion.div
@@ -52,22 +47,21 @@ export default function HeroSection() {
             className="flex flex-wrap gap-4"
           >
             <a href={`mailto:${ownerDetails.email}`}>
-
-            <Button
-              className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
+              <Button
+                className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
               shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
               transition-transform"
               >
-              Explore Products
-            </Button>
-              </a>
+                Explore Products
+              </Button>
+            </a>
 
             <a href={`tel:+91${ownerDetails.phoneNo}`}>
               <Button
                 className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
                 shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
                 transition-transform"
-                >
+              >
                 Call Us Now
               </Button>
             </a>
@@ -85,7 +79,6 @@ export default function HeroSection() {
 
         {/* CONTACT FORM */}
         <div className="flex flex-1 justify-end">
-
           <div className="w-md">
             <BulkEnquiryForm />
           </div>

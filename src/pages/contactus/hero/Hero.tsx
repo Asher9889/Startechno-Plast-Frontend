@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import BulkEnquiryFormforContact from "../BulkEnquiryForm/BulkEnquiryForm";
 import { Wrench } from "lucide-react";
+import { BulkEnquiryForm } from "@/components";
 
 export default function HeroSectionForContact() {
   const tags = [
@@ -78,7 +78,7 @@ export default function HeroSectionForContact() {
         {/* RIGHT CONTENT (KEEP SAME) */}
         <div className="flex flex-1 justify-end">
           <div className="w-md">
-            <BulkEnquiryFormforContact />
+            <BulkEnquiryForm />
           </div>
         </div>
       </div>
