@@ -9,9 +9,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { useBulkEnquiryForm } from "../../components/bulkEnquiryForm/hooks/useBulkEnquiryForm";
 import { Controller } from "react-hook-form";
+import FormLabel from "../form-label/FormLabel";
+import { BulkEnquirySchema } from "./schema/bulkEnquiryForm.schema";
+import { useMemo } from "react";
 
 const BulkEnquiryForm = () => {
   const { form, onSubmit } = useBulkEnquiryForm();
+  const schema = useMemo(() => BulkEnquirySchema.shape, []);
 
   return (
     <section className="w-full max-w-md mx-auto bg-white shadow-lg rounded-xl overflow-hidden border">
@@ -27,11 +31,12 @@ const BulkEnquiryForm = () => {
             name="name"
             render={({ field, fieldState }) => (
               <div>
-                <label className="text-sm font-medium text-gray-700">
+                <FormLabel schema={schema} name="name" htmlFor="name">
                   Your Name
-                </label>
+                </FormLabel>
 
                 <Input
+                  id="name"
                   {...field}
                   placeholder="Enter your name"
                   className="mt-1 text-black placeholder:text-gray-500"
@@ -52,9 +57,9 @@ const BulkEnquiryForm = () => {
             name="phone"
             render={({ field, fieldState }) => (
               <div>
-                <label className="text-sm font-medium text-gray-700">
+                <FormLabel schema={schema} name="phone" htmlFor="phone">
                   Your Phone No.
-                </label>
+                </FormLabel>
 
                 <div className="flex gap-2 mt-1">
                   <div className="min-w-[80px] bg-gray-100 flex items-center justify-center font-medium text-gray-700 rounded-md border px-2">
@@ -62,6 +67,7 @@ const BulkEnquiryForm = () => {
                   </div>
 
                   <Input
+                    id="phone"
                     {...field}
                     placeholder="81234 56789"
                     className="text-black placeholder:text-gray-500"
@@ -91,12 +97,12 @@ const BulkEnquiryForm = () => {
             name="category"
             render={({ field, fieldState }) => (
               <div>
-                <label className="text-sm font-medium text-gray-700">
+                <FormLabel schema={schema} name="category" htmlFor="category">
                   Select Category
-                </label>
+                </FormLabel>
 
-                <Select value={field.value} onValueChange={field.onChange}>
-                  <SelectTrigger className="mt-1 text-black placeholder:text-gray-500">
+                <Select  value={field.value} onValueChange={field.onChange}>
+                  <SelectTrigger id="category" className="mt-1 text-black placeholder:text-gray-500">
                     <SelectValue placeholder="Choose a category" />
                   </SelectTrigger>
 
@@ -121,11 +127,12 @@ const BulkEnquiryForm = () => {
             name="city"
             render={({ field, fieldState }) => (
               <div>
-                <label className="text-sm font-medium text-gray-700">
+                <FormLabel schema={schema} name="city" htmlFor="city">
                   Your City
-                </label>
+                </FormLabel>
 
                 <Input
+                  id="city"
                   {...field}
                   placeholder="Enter your city"
                   className="mt-1 text-black placeholder:text-gray-500"

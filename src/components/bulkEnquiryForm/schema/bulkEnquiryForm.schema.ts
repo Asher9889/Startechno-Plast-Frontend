@@ -3,17 +3,19 @@ import { z } from "zod";
 export const BulkEnquirySchema = z.object({
   name: z
     .string()
-    .min(1, "Name is required")
-    .min(2, "Name must be at least 2 characters"),
+    .trim()
+    .min(2, "Name must be at least 2 characters")
+    .regex(/^[a-zA-Z ]+$/, "Please Enter a valid Name"),
   phone: z
     .string()
-    .min(1, "Phone Number is Required")
+    .trim()
     .regex(/^[6-9][0-9]{9}$/, "Please Enter a valid Phone Number"),
-  category: z.string().min(1, "Please Select a Cotegory"),
+  category: z.string(),
   city: z
     .string()
-    .min(1, "City is Required")
-    .min(4, "City must be at least 4 characters"),
+    .trim()
+    .min(2, "Please Enter a valid City")
+    .regex(/^[a-zA-Z ]+$/, "Please Enter a valid City"),
 });
 
 export type BulkEnquiryType = z.infer<typeof BulkEnquirySchema>;

@@ -26,13 +26,15 @@ import CallNow from "./call-now/CallNow";
 import BulkEnquiryForm from "./bulkEnquiryForm/BulkEnquiryForm";
 // import BulkEnquiryForm from "./bulk-enquiry-fom/BulkEnquiryForm";
 import AutoCarousel from "./auto-corousel/AutoCorousel";
-
-export { AutoCarousel };
-
+import FormLabel from "./form-label/FormLabel";
 import FAQ from "./faqs/FAQ";
 import SmartButton from "./common/SmartButton";
 
+export { AutoCarousel };
+
+
 export {
+  FormLabel,
   SmartButton,
   FAQ,
   Footer,
