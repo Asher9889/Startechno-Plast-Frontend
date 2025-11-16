@@ -10,7 +10,6 @@ export function useBulkEnquiryForm() {
     defaultValues: {
       name: "",
       phone: "",
-      category: "",
       city: "",
     },
     mode: "onChange",

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useBulkEnquiryForm } from "../../components/bulkEnquiryForm/hooks/useBulkEnquiryForm";
 import { Controller } from "react-hook-form";
 import FormLabel from "../form-label/FormLabel";
-import { BulkEnquirySchema } from "./schema/bulkEnquiryForm.schema";
+import { BulkEnquirySchema, categoryOptions } from "./schema/bulkEnquiryForm.schema";
 import { useMemo } from "react";
 
 const BulkEnquiryForm = () => {
@@ -107,9 +107,11 @@ const BulkEnquiryForm = () => {
                   </SelectTrigger>
 
                   <SelectContent>
-                    <SelectItem value="plastic">Plastic Components</SelectItem>
-                    <SelectItem value="molding">Injection Molding</SelectItem>
-                    <SelectItem value="tooling">Tooling Design</SelectItem>
+                    {categoryOptions.map((option) => (
+                      <SelectItem key={option} value={option}>
+                        {option}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
 

@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+
+export const categoryOptions = ["Plastic Components", "Injection Moulding", "Tooling Design", "Other"] as const;
+
 export const BulkEnquirySchema = z.object({
   name: z
     .string()
@@ -10,7 +13,7 @@ export const BulkEnquirySchema = z.object({
     .string()
     .trim()
     .regex(/^[6-9][0-9]{9}$/, "Please Enter a valid Phone Number"),
-  category: z.string(),
+  category: z.enum(categoryOptions, "Please select a valid category"),
   city: z
     .string()
     .trim()
