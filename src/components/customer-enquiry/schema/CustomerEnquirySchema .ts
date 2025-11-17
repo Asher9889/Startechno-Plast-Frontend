@@ -5,7 +5,8 @@ export const CustomerEnquirySchema = z.object({
   name: z
     .string()
     .min(1, "Name is required")
-    .min(2, "Name must be at least 2 characters"),
+    .min(2, "Name must be at least 2 characters")
+    .regex(/^[a-zA-Z ]+$/, "Name must be alphabets only"),
 
   email: z.string().min(1, "Email is required").email("Invalid email address"),
 

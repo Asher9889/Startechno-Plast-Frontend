@@ -1,22 +1,20 @@
-// src/components/common/customer-enquiry/useCustomerEnquiryForm.ts
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import type { CustomerEnquiryType } from "../schema/CustomerEnquirySchema ";
-import { CustomerEnquirySchema } from "../schema/CustomerEnquirySchema ";
-import { submitCustomerEnquiry } from "../services/customerEnquiry.service";
+import { enquirySchema, type TEnquiry } from "../schema/enquiry.schema";
+import { submitEnquiry } from "../services/enquiry.service";
 import { useMutation } from "@tanstack/react-query";
 import { useDialog } from "@/providers";
 
-export function useCustomerEnquiryForm() {
-    const dialog = useDialog();
+
+export function useEnquiryForm() {
+  const dialog = useDialog();
   
-  const form = useForm<CustomerEnquiryType>({
-    resolver: zodResolver(CustomerEnquirySchema),
+  const form = useForm<TEnquiry>({
+    resolver: zodResolver(enquirySchema),
     defaultValues: {
       name: "",
-      email: "",
+      // company: "",
+      // email: "",
       phone: "",
       message: "",
     },
@@ -25,12 +23,12 @@ export function useCustomerEnquiryForm() {
   });
 
   const mutation = useMutation({
-    mutationFn: submitCustomerEnquiry,
-    onError: (error) => {
+    mutationFn: submitEnquiry,
+    onError: (error:any) => {
       console.log(error);
       dialog.showDialog({
         title: "Error",
-        message: error.message,
+        message: error.response?.data?.message || error.message,
         type: "error",
       });    },
     onSuccess: (success) => {
@@ -44,7 +42,7 @@ export function useCustomerEnquiryForm() {
     },
   })
 
-  const onSubmit = async (data: CustomerEnquiryType) => {
+  const onSubmit = async (data: TEnquiry) => {
     mutation.mutate(data);
   };
 

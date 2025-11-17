@@ -1,10 +1,11 @@
 import { Controller } from "react-hook-form";
 import { useCustomerEnquiryForm } from "./hooks/useCustomerEnquiryForm";
 import { useScroll } from "@/components";
+import { Spinner } from "../ui";
 
 export default function CustomerEnquiryForm() {
   const { formRef } = useScroll();
-  const { form, onSubmit } = useCustomerEnquiryForm();
+  const { form, onSubmit, mutation } = useCustomerEnquiryForm();
 
   return (
     <section className="w-full bg-[var(--color-bg)] py-16 px-6">
@@ -107,10 +108,11 @@ export default function CustomerEnquiryForm() {
 
           {/* Submit */}
           <button
+          disabled={mutation.isPending}
             type="submit"
             className="bg-(--color-blue) text-white font-semibold py-4 rounded-lg hover:scale-[0.99] transition"
           >
-            Submit Enquiry
+            {mutation.isPending ? <Spinner /> : "Submit Enquiry"}
           </button>
         </form>
       </div>
