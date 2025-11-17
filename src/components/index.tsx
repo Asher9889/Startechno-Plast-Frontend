@@ -29,11 +29,12 @@ import AutoCarousel from "./auto-corousel/AutoCorousel";
 import FormLabel from "./form-label/FormLabel";
 import FAQ from "./faqs/FAQ";
 import SmartButton from "./common/SmartButton";
-
-export { AutoCarousel };
+import { useScroll } from "./scroll-context/ScrollContext";
+import CustomerEnquiryForm from "./customer-enquiry/CustomerEnquiryForm";
 
 
 export {
+  AutoCarousel,
   FormLabel,
   SmartButton,
   FAQ,
@@ -62,4 +63,6 @@ export {
   ContactUsFloating,
   CallNow,
   BulkEnquiryForm,
+  CustomerEnquiryForm,
+  useScroll,
 };

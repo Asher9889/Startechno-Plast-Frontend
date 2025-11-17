@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ownerDetails } from "@/config/constants/data";
 import { Link } from "react-router-dom";
 import { navItems } from "@/routes";
+import { useScroll } from "@/components";
 
 const RoutesJSX = () => {
   const dropDownClasses =
-    "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  hover:bg-white hover:text-black focus:outline-hidden focus:bg-gray-100";
+    "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm focus:outline-hidden focus:bg-gray-100 hover:bg-[#6022ea]";
 
   const routesJSX = navItems.map((item) => {
     if (item.children.length === 0 || !item.children) {
@@ -56,7 +57,7 @@ const RoutesJSX = () => {
             {item.children.map((child) => {
               return (
                 <Link
-                  className={`${dropDownClasses}`}
+                  className={`${dropDownClasses} `}
                   to={child.path}
                   key={child.name}
                 >
@@ -73,6 +74,7 @@ const RoutesJSX = () => {
 };
 
 const Header = () => {
+  const { scrollToForm } = useScroll();
   const handleCall = () => {
     window.location.href = `tel:${ownerDetails.phoneNo}`;
   };
@@ -91,7 +93,7 @@ const Header = () => {
     );
   };
 
-return (
+  return (
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -105,7 +107,7 @@ return (
               onClick={handleCall}
               variant="ghost"
               size="sm"
-              className="hover:bg-white hover:text-black"
+              className="hover:bg-[#6022ea] hover:text-white"
             >
               <Phone className="w-4 h-4 mr-2" />
               Call
@@ -114,7 +116,7 @@ return (
               onClick={handleEmail}
               variant="ghost"
               size="sm"
-              className="hover:bg-white hover:text-black"
+              className="hover:bg-[#6022ea] hover:text-white"
             >
               <Mail className="w-4 h-4 mr-2" />
               Email
@@ -123,12 +125,13 @@ return (
               onClick={handleWhatsApp}
               variant="ghost"
               size="sm"
-              className="hover:bg-white hover:text-black"
+              className="hover:bg-[#6022ea] hover:text-white"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp
             </Button>
             <Button
+              onClick={scrollToForm}
               variant="outline"
               size="sm"
               className="text-white bg-black hover:text-white hover:bg-green-600 cursor-pointer hover:scale-[0.99]"
