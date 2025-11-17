@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { SmartButton } from "@/components";
+import { useScroll } from "@/components";
 
 export default function Hero() {
+  const { scrollToForm } = useScroll();
+
   return (
     <section className="w-full bg-gradient-br py-24 text-center text-white flex flex-col items-center justify-center px-4">
       <motion.h1
@@ -30,7 +33,7 @@ export default function Hero() {
         className="flex gap-4 flex-wrap justify-center"
       >
         {/* <SmartButton icon={"📩"} >Get a Quote</SmartButton> */}
-        <SmartButton className="hover:bg-(--color-primary) bg-(--color-blue-button)">
+        <SmartButton onClick={scrollToForm} className="hover:bg-(--color-primary) bg-(--color-blue-button)">
           <span>📩</span> Get a Quote
         </SmartButton>
 

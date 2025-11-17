@@ -13,9 +13,12 @@ import {
 import { useEnquiryForm } from "./hooks/useEnquiryForm";
 import { Controller } from "react-hook-form";
 import { foundHowOptions } from "./schema/enquiry.schema";
+import { useScroll } from "@/components";
 
 export function InquiryFormPanel() {
+  const { formRef } = useScroll();
   const { form, onSubmit } = useEnquiryForm();
+
 
   return (
     <motion.section
@@ -24,11 +27,11 @@ export function InquiryFormPanel() {
       transition={{ duration: 0.4 }}
     >
       <form
-
-        className="space-y-4 h-full flex flex-col"
+        ref={formRef}
+        className="space-y-4 h-full flex flex-col rounded-xl p-4"
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        <h2 className="text-xl font-semibold">Send an Inquiry</h2>
+        <h2 className="text-xl font-semibold">Send an Enquiry</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
           <Controller

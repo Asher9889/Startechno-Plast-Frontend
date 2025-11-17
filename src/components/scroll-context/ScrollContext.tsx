@@ -6,7 +6,6 @@ export function ScrollProvider({ children }: { children: React.ReactNode }) {
   const formRef = useRef<HTMLDivElement>(null);
 
   const scrollToForm = () => {
-    console.log("ScrollProvider rendered", formRef);
     if (!formRef.current) return;
     formRef.current.scrollIntoView({
       behavior: "smooth",
