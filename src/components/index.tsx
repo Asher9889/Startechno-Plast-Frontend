@@ -28,6 +28,7 @@ import BulkEnquiryForm from "./bulk-enquiry-fom/BulkEnquiryForm";
 import AutoCarousel from "./auto-corousel/AutoCorousel";
 import CustomerEnquiryForm from "./customer-enquiry/CustomerEnquiryForm";
 import { useScroll } from "./scroll-context/ScrollContext";
+import ProductPage from "./product-page/ProductPage";
 
 export { BulkEnquiryForm, AutoCarousel };
 
@@ -63,4 +64,5 @@ export {
   CallNow,
   CustomerEnquiryForm,
   useScroll,
+  ProductPage,
 };
