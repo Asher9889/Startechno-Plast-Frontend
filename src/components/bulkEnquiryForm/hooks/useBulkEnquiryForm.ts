@@ -27,15 +27,15 @@ export function useBulkEnquiryForm() {
       console.log(error);
       dialog.showDialog({
         title: "Error",
-        message: "Bulk enquiry submission failed",
+        message: error.message,
         type: "error",
       });
     },
-    onSuccess: () => {
+    onSuccess: (success) => {
       form.reset();
       dialog.showDialog({
         title: "Success",
-        message: "Enquiry created successfully. We will get back to you soon.",
+        message: success.message,
         type: "success",
       });
     },
