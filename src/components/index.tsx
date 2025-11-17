@@ -27,6 +27,7 @@ import BulkEnquiryForm from "./bulkEnquiryForm/BulkEnquiryForm";
 // import BulkEnquiryForm from "./bulk-enquiry-fom/BulkEnquiryForm";
 import AutoCarousel from "./auto-corousel/AutoCorousel";
 import FormLabel from "./form-label/FormLabel";
+import ProductPage from "./product-page/ProductPage";
 import FAQ from "./faqs/FAQ";
 import SmartButton from "./common/SmartButton";
 import { useScroll } from "./scroll-context/ScrollContext";
@@ -65,4 +66,5 @@ export {
   BulkEnquiryForm,
   CustomerEnquiryForm,
   useScroll,
+  ProductPage,
 };
