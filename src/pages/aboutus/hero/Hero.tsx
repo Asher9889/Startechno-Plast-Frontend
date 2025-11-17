@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { SmartButton } from "@/components";
 import { useScroll } from "@/components";
+import { ownerDetails } from "@/config";
 
 export default function Hero() {
   const { scrollToForm } = useScroll();
+
+   const openWhatsaap = () => {
+    window.open(`https://wa.me/${ownerDetails.whatsaapNo}`, "_blank");
+  };
 
   return (
     <section className="w-full bg-gradient-br py-24 text-center text-white flex flex-col items-center justify-center px-4">
@@ -40,6 +45,7 @@ export default function Hero() {
         <SmartButton
           variant="outline"
           className="border-none hover:bg-[#075e54] bg-(--whatsaap-color) hover:text-white"
+          onClick={openWhatsaap}
         >
           <span>💬</span> Connect via WhatsApp
         </SmartButton>

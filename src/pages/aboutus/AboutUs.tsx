@@ -71,7 +71,10 @@ export const faqData = [
   },
 ];
 
+
+
 export default function AboutUs() {
+
   return (
     <div className="w-full flex flex-col">
       {/* Hero Section */}
