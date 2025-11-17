@@ -1,8 +1,10 @@
 import { powerBankImage } from "@/assets";
-const powerBankTitle =
-  "Custom Plastic Power Bank Bodies for Leading Electronics Manufacturers";
-const powerBankDescription =
-  "High-Quality Plastic Power Bank Bodies-- Designed for strength, finish & Custom fit. Ideal for electronic brands seeking durable and stylish power bank enclosures.";
+export const powerBankDetails = {
+  title: "Custom Plastic Power Bank Bodies for Leading Electronics Manufacturers",
+  desc1: "High-Quality Plastic Power Bank Bodies-- Designed for strength, finish & Custom fit.",
+  desc2: "At Star Technoplast, we specialize in manufacturing custom plastic bodies and enclosures for power banks. Built using premium ABS and PC materials, our casings ensure durability, heat resistance, and elegant aesthetics tailored to your brand.",
+  applicationsSectionDescription: "Our precision-molded power bank bodies are trusted by OEMs, electronic brands, and device assemblers across India for high-performance portable chargers."
+}
 const powerBankFaqs = [
   {
     id: "pb1",
@@ -66,71 +68,52 @@ const powerBankFaqs = [
 ];
 const powerBankSpecifications = [
   {
-    label: "Product Type",
-    value: "Plastic Power Bank Body / Enclosure",
+    label: "Material",
+    value: "ABS / Polycarbonate / Custom Polymer Blend",
   },
   {
-    label: "Material Used",
-    value: "ABS / Polycarbonate / PP Blend (High Impact Grade)",
+    label: "Design Type",
+    value: "Single or Dual USB Slot Body",
   },
   {
-    label: "Available Capacity Designs",
-    value: "5,000mAh / 10,000mAh / 20,000mAh Enclosure Layouts",
+    label: "Finish",
+    value: "Matte / Gloss / Custom Texture",
   },
   {
-    label: "Supported Battery Types",
-    value: "Li-ion / Li-Polymer Cells (Standard & High-Density)",
-  },
-  {
-    label: "Design Options",
-    value: "Single-Slot / Dual-Slot / Multi-Slot PCB & Cell Layouts",
-  },
-  {
-    label: "Port Cutouts",
-    value: "USB-A, USB-C, Micro USB, Indicator LEDs, Power Button",
-  },
-  {
-    label: "Surface Finish",
-    value: "Matte / Glossy / Anti-Slip Texture / Custom Finish",
+    label: "Size Compatibility",
+    value: "5000 mAh to 20,000 mAh Modules",
   },
   {
     label: "Color Options",
-    value: "White, Black, Grey, Custom Pantone Color Matching",
+    value: "Black, White, Grey, Custom",
   },
   {
-    label: "Logo & Branding",
-    value: "Engraved / Embossed / Screen Printed Branding Options",
-  },
-  {
-    label: "Compatible PCB Size",
-    value: "Supports Standard Power Bank Modules for 5W to 22.5W Fast Charging",
-  },
-  {
-    label: "Battery Compatibility",
-    value: "18650 Cells / 21700 Cells / Soft Polymer Batteries (As per Design)",
-  },
-  {
-    label: "Assembly Type",
-    value: "Snap-Fit / Screw-Fit Options Available",
+    label: "Logo Options",
+    value: "Engraved / Screen Printed / Embossed",
   },
   {
     label: "MOQ",
     value: "500 Units (Custom Orders Accepted)",
   },
-  {
-    label: "Applications",
-    value: "Power Banks, Portable Battery Packs, Promotional Power Devices",
-  },
-  {
-    label: "Customization",
-    value:
-      "OEM/ODM Support, Complete Private Labeling, Full Mold Customization Available",
-  },
 ];
+
+const ctaData = {
+  title: "Need a Reliable Power Bank Body Manufacturer?",
+  description: "Partner with Star Technoplast for consistent quality, timely delivery, and custom molding solutions built to match your brand’s identity.",
+  primaryAction: {
+    label: "Get a Quote",
+    href: "/about",
+  },
+  secondaryAction: {
+    label: "Contact Us Now",
+    href: "/contact",
+  }
+}
+
+
 export {
-  powerBankTitle,
-  powerBankDescription,
   powerBankFaqs,
   powerBankSpecifications,
   powerBankImage,
+  ctaData
 };

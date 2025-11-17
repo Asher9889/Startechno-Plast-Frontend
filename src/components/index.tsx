@@ -32,9 +32,12 @@ import FAQ from "./faqs/FAQ";
 import SmartButton from "./common/SmartButton";
 import { useScroll } from "./scroll-context/ScrollContext";
 import CustomerEnquiryForm from "./customer-enquiry/CustomerEnquiryForm";
-
+import ApplicationsSection from "./application-section/ApplicationSection";
+import CtaBanner from "./ctaBanner/CtaBanner";
 
 export {
+  CtaBanner,
+  ApplicationsSection,
   AutoCarousel,
   FormLabel,
   SmartButton,

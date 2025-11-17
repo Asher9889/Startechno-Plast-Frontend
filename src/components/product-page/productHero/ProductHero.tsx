@@ -4,18 +4,21 @@ import { motion } from "framer-motion";
 interface ProductHeroProps {
   title: string;
   description: string;
+  desc2: string,
   image?: string; // optional
 }
 
 export default function ProductHero({
   title,
   description,
+  desc2,
   image = "https://www.motortrend.com/uploads/sites/21/2012/08/mopp-1211-03-1966-Dodge-Charger-Exclusive-Photos1.jpg",
 }: ProductHeroProps) {
+
   return (
     <section className="w-full bg-[#0b0b1a] text-white py-20 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -27,11 +30,12 @@ export default function ProductHero({
             H1
           </p> */}
 
-            <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+            <h1 className="text-4xl font-semibold leading-tight">
               {title}
             </h1>
 
             <p className="text-lg text-gray-300 font-medium">{description}</p>
+            <p className="text-sm text-gray-300 font-medium">{desc2}</p>
 
             <div className="gap-4 pt-4 flex lg:flex-row flex-col">
               <Button className="bg-purple-600 hover:bg-purple-700 px-6 py-5 text-lg rounded-xl">

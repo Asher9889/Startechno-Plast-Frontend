@@ -1,22 +1,24 @@
 import { ProductPage } from "@/components";
 import {
-  powerBankTitle,
-  powerBankDescription,
   powerBankFaqs,
   powerBankSpecifications,
   powerBankImage,
+  powerBankDetails,
 } from "./powerBankDetails/powerBankDetail";
 
 export default function PowerBankPage() {
   return (
     <>
       <ProductPage
-        title={powerBankTitle}
-        description={powerBankDescription}
+        title={powerBankDetails.title}
+        description={powerBankDetails.desc1}
+        desc2={powerBankDetails.desc2}
         specs={powerBankSpecifications}
         faqs={powerBankFaqs}
         image={powerBankImage}
+        applicationsSectionDescription={powerBankDetails.applicationsSectionDescription}
       />
+
     </>
   );
 }
