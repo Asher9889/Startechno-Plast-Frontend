@@ -18,15 +18,15 @@ export default function ProductPage({
 }: ProductData) {
   return (
     <>
-      <main className="w-full flex flex-col">
+      <section className="w-full">
         {/* Hero Section */}
         <ProductHero title={title} description={description} image={image} />
 
         {/* Specifications Section */}
         <ProductSpecifications specs={specs} />
-      </main>
-      <section className="bg-gradient-br py-20 px-3">
-        <FAQ faqs={faqs} />
+        <section className="bg-gradient-br py-20 px-3">
+          <FAQ faqs={faqs} />
+        </section>
       </section>
     </>
   );

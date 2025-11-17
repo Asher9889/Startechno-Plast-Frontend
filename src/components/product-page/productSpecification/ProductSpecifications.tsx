@@ -8,7 +8,7 @@ export default function ProductSpecifications({
 }: ProductSpecificationsProps) {
   return (
     <section className="w-full bg-[#f8f9fc] text-black py-12 px-4 md:px-8 border-t border-gray-200">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

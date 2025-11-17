@@ -14,7 +14,7 @@ export default function ProductHero({
 }: ProductHeroProps) {
   return (
     <section className="w-full bg-[#0b0b1a] text-white py-20 px-6 md:px-12 lg:px-20">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -33,7 +33,7 @@ export default function ProductHero({
 
             <p className="text-lg text-gray-300 font-medium">{description}</p>
 
-            <div className="flex gap-4 pt-4">
+            <div className="gap-4 pt-4 flex lg:flex-row flex-col">
               <Button className="bg-purple-600 hover:bg-purple-700 px-6 py-5 text-lg rounded-xl">
                 Get a Quote
               </Button>
