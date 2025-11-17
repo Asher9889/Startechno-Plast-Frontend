@@ -12,6 +12,8 @@ import "dropzone/dist/dropzone-min.js";
 import * as VanillaCalendarPro from "vanilla-calendar-pro";
 import { HelmetProvider } from "react-helmet-async";
 import { ScrollProvider } from "./components/scroll-context/ScrollContext.tsx";
+import { ReactQueryProvider } from "./providers";
+import { DialogProvider } from "./providers";
 
 window._ = _;
 window.$ = $;
@@ -19,15 +21,19 @@ window.jQuery = $;
 window.DataTable = $.fn.dataTable;
 window.noUiSlider = noUiSlider;
 window.VanillaCalendarPro = VanillaCalendarPro;
-//-----End preline Config-----?
 
+//-----End preline Config-----?
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <HelmetProvider>
       <BrowserRouter>
+      <ReactQueryProvider> 
+        <DialogProvider>
         <ScrollProvider>
           <App />
         </ScrollProvider>
+        </DialogProvider>
+      </ReactQueryProvider>
       </BrowserRouter>
     </HelmetProvider>
   </StrictMode>

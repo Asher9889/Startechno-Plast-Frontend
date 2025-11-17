@@ -12,9 +12,10 @@ import { Controller } from "react-hook-form";
 import FormLabel from "../form-label/FormLabel";
 import { BulkEnquirySchema, categoryOptions } from "./schema/bulkEnquiryForm.schema";
 import { useMemo } from "react";
+import { Spinner } from "../ui";
 
 const BulkEnquiryForm = () => {
-  const { form, onSubmit } = useBulkEnquiryForm();
+  const { form, onSubmit, mutation } = useBulkEnquiryForm();
   const schema = useMemo(() => BulkEnquirySchema.shape, []);
 
   return (
@@ -151,10 +152,11 @@ const BulkEnquiryForm = () => {
 
           {/* CTA */}
           <Button
+            disabled={mutation.isPending}
             className="w-full bg-(--color-blue) hover:bg-[#041f40] text-white font-semibold py-6 rounded-lg"
             type="submit"
           >
-            INQUIRE NOW
+            {mutation.isPending ? <Spinner /> : "INQUIRE NOW"}
           </Button>
 
           {/* Footer Text */}
