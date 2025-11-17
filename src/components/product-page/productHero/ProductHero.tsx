@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { ownerDetails } from "@/config";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface ProductHeroProps {
   title: string;
@@ -14,6 +16,11 @@ export default function ProductHero({
   desc2,
   image = "https://www.motortrend.com/uploads/sites/21/2012/08/mopp-1211-03-1966-Dodge-Charger-Exclusive-Photos1.jpg",
 }: ProductHeroProps) {
+
+  const navigation = useNavigate();
+   const handleCall = () => {
+    window.location.href = `tel:${ownerDetails.phoneNo}`;
+  };
 
   return (
     <section className="w-full bg-[#0b0b1a] text-white py-20 px-6 md:px-12 lg:px-20">
@@ -38,10 +45,11 @@ export default function ProductHero({
             <p className="text-sm text-gray-300 font-medium">{desc2}</p>
 
             <div className="gap-4 pt-4 flex lg:flex-row flex-col">
-              <Button className="bg-purple-600 hover:bg-purple-700 px-6 py-5 text-lg rounded-xl">
+              <Button onClick={() => navigation("/about")} className="bg-purple-600 hover:bg-purple-700 px-6 py-5 text-lg rounded-xl">
                 Get a Quote
               </Button>
               <Button
+                onClick={handleCall}
                 variant="outline"
                 className="border-gray-500 text-white hover:bg-gray-800 px-6 py-5 text-lg rounded-xl"
               >
