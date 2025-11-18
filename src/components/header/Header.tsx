@@ -97,11 +97,16 @@ const Header = () => {
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="hidden lg:inline text-2xl font-bold">STAR TECHNOPLAST</div>
-           <Link to="/" className="hidden lg:inline text-xl font-bold">PureCheckup</Link>
-          <aside className="lg:hidden">
-            <Sidebar />
-          </aside>
+          <div className="w-full flex flex-row justify-between items-center">
+            <aside className="lg:hidden">
+              <Sidebar />
+            </aside>
+            <h1 className="hidden lg:inline text-2xl font-bold">STAR TECHNOPLAST</h1>
+            <Link to="/" className="lg:hidden text-right text-2xl font-bold">
+              <p>STAR TECHNOPLAST</p>
+            </Link>
+          </div>
+
           <nav className="relative hidden md:flex items-center space-x-8 text-white">
             <RoutesJSX />
           </nav>
