@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ownerDetails } from "@/config/constants/data";
 import { Link } from "react-router-dom";
 import { navItems } from "@/routes";
-import { useScroll } from "@/components";
+import { Sidebar, useScroll } from "@/components";
 
 const RoutesJSX = () => {
   const dropDownClasses =
@@ -97,7 +97,11 @@ const Header = () => {
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold">STAR TECHNOPLAST</div>
+          <div className="hidden lg:inline text-2xl font-bold">STAR TECHNOPLAST</div>
+           <Link to="/" className="hidden lg:inline text-xl font-bold">PureCheckup</Link>
+          <aside className="lg:hidden">
+            <Sidebar />
+          </aside>
           <nav className="relative hidden md:flex items-center space-x-8 text-white">
             <RoutesJSX />
           </nav>
