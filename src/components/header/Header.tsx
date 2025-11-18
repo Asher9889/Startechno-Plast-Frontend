@@ -12,9 +12,8 @@ const RoutesJSX = () => {
   const routesJSX = navItems.map((item) => {
     if (item.children.length === 0 || !item.children) {
       return (
-        console.log("item", item),
         (
-          <Link to={item.path} key={item.name} className=" transition-colors">
+          <Link to={item.path!} key={item.name} className=" transition-colors">
             {item.name}
           </Link>
         )
@@ -101,7 +100,9 @@ const Header = () => {
             <aside className="lg:hidden">
               <Sidebar />
             </aside>
-            <h1 className="hidden lg:inline text-2xl font-bold">STAR TECHNOPLAST</h1>
+            <Link to="/">
+              <h1 className="hidden lg:inline text-2xl font-bold">STAR TECHNOPLAST</h1>
+            </Link>
             <Link to="/" className="lg:hidden text-right text-2xl font-bold">
               <p>STAR TECHNOPLAST</p>
             </Link>

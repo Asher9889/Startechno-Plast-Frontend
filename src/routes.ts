@@ -31,7 +31,6 @@ export const navItems = [
   },
   {
     name: "Products",
-    path: "/products",
     skip: false,
     icon: Microscope,
     children: [

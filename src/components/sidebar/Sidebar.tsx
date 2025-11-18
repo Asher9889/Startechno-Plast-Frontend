@@ -56,8 +56,8 @@ const Sidebar = () => {
                         <div className="flex items-center justify-between rounded-lg hover:bg-(--sidebar-hover-bg) transition">
                           {/* Parent Link (navigates to path) */}
                           <Link
-                            to={path || ""}
-                            onClick={() => setIsOpen(false)} // auto close on mobile
+                            to={path!}
+                            onClick={() => path && setIsOpen(false)} // auto close on mobile
                             className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white w-full"
                           >
                             <Icon className="size-4" />
@@ -108,7 +108,7 @@ const Sidebar = () => {
                     ) : (
                       <li key={name + index}>
                         <Link
-                          to={path}
+                          to={path!}
                           onClick={() => setIsOpen(false)} // auto-close on mobile
                           className="flex items-center gap-x-3.5 py-2 px-2.5 rounded-lg text-sm text-white hover:bg-(--sidebar-hover-bg) transition"
                         >
