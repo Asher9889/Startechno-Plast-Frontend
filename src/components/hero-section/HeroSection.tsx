@@ -25,7 +25,7 @@ export default function HeroSection() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-4xl lg:text-5xl font-semibold pl-4"
             >
-              India's Most Trusted Partner in Mobile Accessories Manufacturing
+              India's Most Trusted Partner in electrical and electronic accessories manufacturing
             </motion.h1>
           </div>
 
@@ -35,9 +35,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg text-(--color-text-muted) max-w-lg leading-7"
           >
-            Star Technoplast is redefining quality with premium USB cables,
-            adapters, and a complete range of modern mobile accessories.
-            Designed for durability, engineered for trust.
+            Star Technoplast is redefining quality with premium USB cables, adapters, and a comprehensive range of modern electrical and electronic accessories. Designed for durability, engineered for trust.
           </motion.h2>
 
           <motion.div
@@ -50,7 +48,7 @@ export default function HeroSection() {
               <Button
                 className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
               shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
-              transition-transform"
+              transition-transform cursor-pointer"
               >
                 Explore Products
               </Button>
@@ -60,7 +58,7 @@ export default function HeroSection() {
               <Button
                 className="bg-(--color-primary) text-white px-6  text-lg rounded-2xl 
                 shadow-lg hover:bg-(--color-primary-light) hover:scale-105 
-                transition-transform"
+                transition-transform cursor-pointer"
               >
                 Call Us Now
               </Button>

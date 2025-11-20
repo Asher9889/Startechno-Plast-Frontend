@@ -31,7 +31,7 @@ export default function ConnectWithUs() {
           <button
             className="flex items-center gap-2 px-5 py-2.5 border border-[var(--color-black-text)] rounded-full text-sm text-[var(--color-black-text)] hover:bg-gray-200 hover:text-black transition"
             onClick={() =>
-              (window.location.href = "mailto:info@startechnoplast.com")
+              (window.location.href = "mailto:mukesh@startechnoplast.com")
             }
           >
             <Mail size={18} /> Email

@@ -8,7 +8,7 @@ import { CustomerEnquiryForm } from "@/components";
 const faqs = [
   {
     id: "one",
-    question: "What does Startechnoplast manufacture?",
+    question: "What does Star Technoplast manufacture?",
     answer:
       "We specialize in manufacturing a wide range of mobile accessories, including power banks, chargers, Bluetooth speakers, neckbands, earbuds, and electronic lighters.",
   },
