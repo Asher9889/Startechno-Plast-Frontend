@@ -9,7 +9,7 @@ export { practoImg, practoHero, tanmay, cms, wtsp, laproscopy };
 
 import heroImage from "./techno-images/section.webp";
 import powerBankImage from "./techno-images/power-bank.webp";
-import logo from "./techno-images/logo.png";
+import logo from "./techno-images/logo.webp";
 import lighterImage from "./techno-images/lighter.webp";
 import plugBody from "./techno-images/plugBody.webp";
 import powerBankBody from "./techno-images/powerBankBody.webp";

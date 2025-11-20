@@ -4,6 +4,7 @@ import { ownerDetails } from "@/config/constants/data";
 import { Link } from "react-router-dom";
 import { navItems } from "@/routes";
 import { Sidebar, useScroll } from "@/components";
+// import { logo } from "@/assets";
 
 const RoutesJSX = () => {
   const dropDownClasses =
@@ -95,24 +96,30 @@ const Header = () => {
   return (
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="w-full flex flex-row justify-between items-center">
+        <div className="flex items-center justify-between gap-4">
+
+          <div className="w-full flex flex-row justify-between lg:justify-start">
+
             <aside className="lg:hidden">
               <Sidebar />
             </aside>
-            <Link to="/">
-              <h1 className="hidden lg:inline text-2xl font-bold">STAR TECHNOPLAST</h1>
-            </Link>
-            <Link to="/" className="lg:hidden text-right text-2xl font-bold">
-              <p>STAR TECHNOPLAST</p>
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link to="/">
+                {/* <img className="relative w-32 -top-2 left-[25%]" src={logo} alt="" /> */}
+                <h1 className="hidden lg:inline text-2xl text-nowrap font-bold">Star Technoplast</h1>
+              </Link>
+              {/* for md and below */}
+              <Link to="/" className="lg:hidden text-left text-2xl text-nowrap font-bold">
+                <p>Star Technoplast</p>
+              </Link>
+            </div>
           </div>
 
           <nav className="relative hidden md:flex items-center space-x-8 text-white">
             <RoutesJSX />
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4">
             <Button
               onClick={handleCall}
               variant="ghost"
@@ -150,6 +157,7 @@ const Header = () => {
               Get Quotes
             </Button>
           </div>
+
         </div>
       </div>
     </header>
