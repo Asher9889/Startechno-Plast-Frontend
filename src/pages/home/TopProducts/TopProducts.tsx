@@ -7,43 +7,51 @@ import {
   speakerBox,
 } from "@/assets";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const products = [
-  { name: "Power Bank", image: powerBankImage },
-  { name: "Power Bank Covers", image: powerBankBody },
-  { name: "Plug Body", image: plugBody },
-  { name: "Speaker Box", image: speakerBox },
+  { name: "Power Bank", image: powerBankImage, path: "/products/power-banks" },
+  { name: "Power Bank Covers", image: powerBankBody, path: "/products/power-banks" },
+  { name: "Plug Body", image: plugBody, path: "/products/chargers" },
+  { name: "Speaker Box", image: speakerBox, path: "/products/bluetooth-speakers" },
   {
     name: "Mobile Charger",
     image:
       "https://cdn.pixabay.com/photo/2018/07/01/13/28/two-pin-3509490_1280.jpg",
+    path: "/products/chargers",
   },
   {
     name: "Neckband",
     image:
       "https://cdn.pixabay.com/photo/2017/08/14/16/15/earphone-2640990_1280.jpg",
+    path: "/products/neckbands",
   },
   {
     name: "Speakers",
     image: speakerBody,
+    path: "/products/bluetooth-speakers",
   },
   {
     name: "Earbuds",
     image:
       "https://cdn.pixabay.com/photo/2015/11/25/21/38/xiao-us-1062989_1280.jpg",
+    path: "/products/earbuds",
   },
   {
     name: "Lighters",
     image: lighterImage,
+    path: "/products/electronic-lighters",
   },
 ];
 
 export default function TopProducts() {
+  const navigate = useNavigate();
   return (
     <section className="bg-gray-100 py-20">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
           <motion.div
+            onClick={() => navigate(product.path)}
             key={product.name}
             whileHover="hover"
             initial="initial"
@@ -79,7 +87,7 @@ export default function TopProducts() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center p-4"
             >
-              <h3 className="text-white text-xl font-bold">{product.name}</h3>
+              <h3 className="text-white text-xl font-bold hover:text-blue-500 transition-colors hover:underline">{product.name}</h3>
               <p className="text-white text-sm mt-2">
                 High-performance {product.name.toLowerCase()} built for modern
                 use.

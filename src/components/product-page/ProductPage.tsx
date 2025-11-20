@@ -4,6 +4,7 @@ import FAQ from "../faqs/FAQ";
 import WhyChooseSection from "@/pages/product/powerBank/why-choose-section/WhyChooseSection";
 import {  CtaBanner } from "@/components"
 import { ctaData } from "@/pages/product/powerBank/powerBankDetails/powerBankDetail";
+import { useEffect } from "react";
 
 interface ProductData {
   faqs: { id: string; question: string; answer: string }[];
@@ -23,6 +24,10 @@ export default function ProductPage({
   faqs,
   // _applicationsSectionDescription
 }: ProductData) {
+  useEffect(()=> {
+    document.title = title;
+    window.scrollTo(0, 0);
+  },[title])
   return (
     <>
       <section className="w-full">

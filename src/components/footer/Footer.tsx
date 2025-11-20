@@ -1,8 +1,15 @@
-import { category, nav } from '@/config';
 import { ownerDetails } from '@/config/constants/data';
+import { navItems } from '@/routes';
 import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Footer() {
+  const location = useLocation();
+
+  useEffect(()=> {
+   window.scrollTo(0, 0);
+  },[location.pathname])
   return (
     <footer className="bg-(--color-black-bg) text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -34,7 +41,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {nav.map((title, _) => (<li><a href="#" className="text-gray-400 hover:text-white transition">{title}</a></li>))}
+              {navItems.map((item, _) => (<li key={item.name}><Link to={item.path!!} className="text-gray-400 hover:text-white transition">{item.name}</Link></li>))}
             </ul>
           </div>
 
@@ -42,7 +49,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Products</h4>
             <ul className="space-y-2">
-              {category.map((cate, _) => (<li><a href="#" className="text-gray-400 hover:text-white transition">{cate}</a></li>))}
+              {navItems.map((items, _) => (items.children.map((item, _) => (<li key={item.name}><Link to={item.path!!} className="text-gray-400 hover:text-white transition">{item.name}</Link></li>))))}
             </ul>
           </div>
 
