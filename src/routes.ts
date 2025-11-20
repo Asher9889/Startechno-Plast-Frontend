@@ -3,7 +3,7 @@ import {
   Microscope,
   HeartPulse,
   Baby,
-  Sparkles,
+  // Sparkles,
 } from "lucide-react";
 import { PageNotFound } from "./components";
 import {
@@ -94,13 +94,13 @@ export const navItems = [
     element: ContactUsPage,
     children: [],
   },
-  {
-    name: "Blogs",
-    path: "/blogs",
-    skip: false,
-    icon: Sparkles,
-    children: [],
-  },
+  // {
+  //   name: "Blogs",
+  //   path: "/blogs",
+  //   skip: false,
+  //   icon: Sparkles,
+  //   children: [],
+  // },
   // Patient Service
 
   // Our Company

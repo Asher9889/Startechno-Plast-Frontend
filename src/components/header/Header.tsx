@@ -4,7 +4,7 @@ import { ownerDetails } from "@/config/constants/data";
 import { Link } from "react-router-dom";
 import { navItems } from "@/routes";
 import { Sidebar, useScroll } from "@/components";
-// import { logo } from "@/assets";
+import { logo } from "@/assets";
 
 const RoutesJSX = () => {
   const dropDownClasses =
@@ -103,10 +103,10 @@ const Header = () => {
             <aside className="lg:hidden">
               <Sidebar />
             </aside>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center">
+                <img className="w-20" src={logo} alt="" />
               <Link to="/">
-                {/* <img className="relative w-32 -top-2 left-[25%]" src={logo} alt="" /> */}
-                <h1 className="hidden lg:inline text-2xl text-nowrap font-bold">Star Technoplast</h1>
+                <h1 className="hidden lg:inline text-2xl text-nowrap font-semibold">Star Technoplast</h1>
               </Link>
               {/* for md and below */}
               <Link to="/" className="lg:hidden text-left text-2xl text-nowrap font-bold">
