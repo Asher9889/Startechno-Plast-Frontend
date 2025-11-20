@@ -14,7 +14,7 @@ export default function ProductHero({
   title,
   description,
   desc2,
-  image = "https://www.motortrend.com/uploads/sites/21/2012/08/mopp-1211-03-1966-Dodge-Charger-Exclusive-Photos1.jpg",
+  image = "https://cdn.pixabay.com/photo/2018/07/01/13/28/two-pin-3509490_1280.jpg",
 }: ProductHeroProps) {
 
   const navigation = useNavigate();
