@@ -96,7 +96,7 @@ const electronicLighterSpecifications: any = [
   },
   {
     label: "MOQ (Minimum Order Quantity)",
-    value: "500 Units",
+    value: "100,000 Units",
   },
   {
     label: "Customization",
