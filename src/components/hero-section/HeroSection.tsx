@@ -35,7 +35,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg text-(--color-text-muted) max-w-lg leading-7"
           >
-            Startechno Plast is redefining quality with premium USB cables,
+            Star Technoplast is redefining quality with premium USB cables,
             adapters, and a complete range of modern mobile accessories.
             Designed for durability, engineered for trust.
           </motion.h2>
