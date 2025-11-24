@@ -36,7 +36,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg text-(--color-text-muted) max-w-lg leading-7"
           >
-            Star Technoplast is redefining quality and a comprehensive range of modern electrical and electronic accessories. Designed for durability, engineered for trust.
+            Star Technoplast is redefining quality with premium and a comprehensive range of advanced electrical and electronic accessories. Every product is designed for durability and engineered to deliver unmatched reliability and trust.
           </motion.h2>
 
           <motion.div

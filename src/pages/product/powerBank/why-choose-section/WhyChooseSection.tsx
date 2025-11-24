@@ -10,7 +10,7 @@ const features = [
   },
   {
     title: "Premium Materials",
-    description: "ABS, PC, or hybrid blends for durability & impact resistance.",
+    description: "SAN / ABS / PC hybrid blends for durability & impact resistance.",
     icon: <Layers className="h-6 w-6" />,
   },
   {
