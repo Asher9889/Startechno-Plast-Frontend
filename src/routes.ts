@@ -83,7 +83,7 @@ export const navItems = [
     path: "/about",
     skip: false,
     icon: HeartPulse,
-    element: AboutUs,
+    element: ContactUsPage,
     children: [],
   },
   {
@@ -91,8 +91,15 @@ export const navItems = [
     path: "/contact",
     skip: false,
     icon: Baby,
-    element: ContactUsPage,
-    children: [],
+    element: AboutUs,
+    children: [
+      // {
+      //   name: "Call",
+      //   // path: "/contact/bulk-enquiry",
+      //   skip: false,
+      //   // element: BulkEnquiryPage,
+      // },
+    ],
   },
   // {
   //   name: "Blogs",

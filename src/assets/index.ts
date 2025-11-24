@@ -16,8 +16,12 @@ import powerBankBody from "./techno-images/powerBankBody.webp";
 import speaker1 from "./techno-images/speaker1.webp";
 import speakerBody from "./techno-images/speakerBody.webp";
 import speakerBox from "./techno-images/speakerBox.webp";
+import startechnoPlastHeroImage from "./techno-images/startechnoPlastHeroImage.webp";
+import phnGif from "../assets/techno-images/phone-6172514-unscreen.gif";
 
 export {
+  phnGif,
+  startechnoPlastHeroImage,
   heroImage,
   powerBankImage,
   logo,

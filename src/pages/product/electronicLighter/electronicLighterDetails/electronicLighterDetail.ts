@@ -3,7 +3,9 @@ const electronicLighterTitle =
   "Precision-Molded Electronic Lighter Bodies for OEM Manufacturers";
 const electronicLighterDescription =
   "High-quality, durable, and customizable plastic lighter enclosures designed for electronic and rechargeable lighters. Manufactured using premium-grade polymers to ensure superior heat resistance, strength, and aesthetic appeal.";
-const electronicLighterFaqs: any = [
+
+
+  const electronicLighterFaqs: any = [
   {
     id: "lt1",
     question: "What does Star Technoplast manufacture for electronic lighters?",
@@ -14,7 +16,7 @@ const electronicLighterFaqs: any = [
     id: "lt2",
     question: "Which materials are used in making lighter bodies?",
     answer:
-      "We use ABS and Polycarbonate materials known for heat resistance, strength, and durability.",
+      "We use SAN, ABS, PC",
   },
   {
     id: "lt3",
@@ -72,7 +74,7 @@ const electronicLighterSpecifications: any = [
   },
   {
     label: "Material Used",
-    value: "ABS / Polycarbonate / Custom Polymer Blend",
+    value: "SAN / ABS / PC",
   },
   {
     label: "Finish Options",

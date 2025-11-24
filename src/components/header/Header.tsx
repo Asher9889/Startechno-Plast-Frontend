@@ -1,6 +1,5 @@
-import { Phone, Mail, MessageCircle, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ownerDetails } from "@/config/constants/data";
 import { Link } from "react-router-dom";
 import { navItems } from "@/routes";
 import { Sidebar, useScroll } from "@/components";
@@ -75,78 +74,37 @@ const RoutesJSX = () => {
 
 const Header = () => {
   const { scrollToForm } = useScroll();
-  const handleCall = () => {
-    window.location.href = `tel:${ownerDetails.phoneNo}`;
-  };
 
-  const handleEmail = () => {
-    window.location.href = `mailto:${ownerDetails.email}`;
-  };
-
-  const handleWhatsApp = () => {
-    const encodedMessage = encodeURIComponent(
-      ownerDetails.whatsaapWelcomeMessage
-    );
-    window.open(
-      `https://wa.me/${ownerDetails.whatsaapNo}?text=${encodedMessage}`,
-      "_blank"
-    );
-  };
 
   return (
     <header className="border-b border-border text-white bg-(--color-black-bg)">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-4">
 
-          <div className="w-full flex flex-row justify-between lg:justify-start">
+          {/* <div className="w-full flex flex-row justify-between lg:justify-start"> */}
 
             <aside className="lg:hidden">
               <Sidebar />
             </aside>
-            <div className="flex items-center">
-                <img className="w-20" src={logo} alt="" />
+            {/* logo */}
+            <div className="flex justify-end items-center gap-4">
+              <img className="lg:w-20 w-16" src={logo} alt="" />
               <Link to="/">
                 <h1 className="hidden lg:inline text-2xl text-nowrap font-semibold">Star Technoplast</h1>
               </Link>
               {/* for md and below */}
-              <Link to="/" className="lg:hidden text-left text-2xl text-nowrap font-bold">
+              <Link to="/" className="lg:hidden text-left text-xl text-nowrap font-bold">
                 <p>Star Technoplast</p>
               </Link>
             </div>
-          </div>
 
-          <nav className="relative hidden md:flex items-center space-x-8 text-white">
+          {/* </div> */}
+
+          <nav className="relative hidden md:flex items-center gap-10 text-white">
             <RoutesJSX />
           </nav>
 
-          <div className="hidden xl:flex items-center space-x-4">
-            <Button
-              onClick={handleCall}
-              variant="ghost"
-              size="sm"
-              className="hover:bg-[#6022ea] hover:text-white"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Call
-            </Button>
-            <Button
-              onClick={handleEmail}
-              variant="ghost"
-              size="sm"
-              className="hover:bg-[#6022ea] hover:text-white"
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Email
-            </Button>
-            <Button
-              onClick={handleWhatsApp}
-              variant="ghost"
-              size="sm"
-              className="hover:bg-[#6022ea] hover:text-white"
-            >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp
-            </Button>
+          <div className="hidden xl:flex items-center">
             <Button
               onClick={scrollToForm}
               variant="outline"

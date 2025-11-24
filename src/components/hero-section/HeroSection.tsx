@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ownerDetails } from "@/config";
 import { BulkEnquiryForm } from "@/components";
+import { startechnoPlastHeroImage } from "@/assets";
 
 export default function HeroSection() {
   return (
-    <section className="py-10 bg-gradient-br relative w-full text-(--color-white-text)">
+    <section className="py-10 relative w-full text-(--color-white-text)">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between gap-10 md:gap-4">
         {/* LEFT CONTENT */}
         <motion.div
@@ -35,7 +36,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg text-(--color-text-muted) max-w-lg leading-7"
           >
-            Star Technoplast is redefining quality with premium USB cables, adapters, and a comprehensive range of modern electrical and electronic accessories. Designed for durability, engineered for trust.
+            Star Technoplast is redefining quality and a comprehensive range of modern electrical and electronic accessories. Designed for durability, engineered for trust.
           </motion.h2>
 
           <motion.div
@@ -81,6 +82,12 @@ export default function HeroSection() {
             <BulkEnquiryForm />
           </div>
         </div>
+      </div>
+      <div className="absolute inset-0 -z-10">
+        {/* Background Image */}
+        <img src={startechnoPlastHeroImage} className="object-cover w-full h-full" alt="background" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 black-bg-gradient-br opacity-80"></div>
       </div>
     </section>
   );

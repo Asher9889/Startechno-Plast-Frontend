@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Wrench } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { BulkEnquiryForm } from "@/components";
+import { ownerDetails } from "@/config";
+import { phnGif } from "@/assets";
 
 export default function HeroSectionForContact() {
   const tags = [
@@ -10,6 +12,26 @@ export default function HeroSectionForContact() {
     "CAD • Prototyping • Tooling",
     "Rigorous QA • Quick TAT",
   ];
+
+  const handleCall = () => {
+    window.location.href = `tel:${ownerDetails.phoneNo}`;
+  };
+
+  const handleEmail = () => {
+    window.location.href = `mailto:${ownerDetails.email}`;
+  };
+
+  const handleWhatsApp = () => {
+    const encodedMessage = encodeURIComponent(
+      ownerDetails.whatsaapWelcomeMessage
+    );
+    window.open(
+      `https://wa.me/${ownerDetails.whatsaapNo}?text=${encodedMessage}`,
+      "_blank"
+    );
+  };
+
+  const buttonClasses = `px-4 py-2 hover:scale-[1.03] cursor-pointer hover:bg-[#6022ea] rounded-full hover:text-white border-gray-400 bg-white/10 backdrop-blur-sm`;
 
   return (
     <section className="py-10 bg-gradient-br relative w-full text-(--color-white-text)">
@@ -69,9 +91,41 @@ export default function HeroSectionForContact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button className="bg-(--color-primary) text-white px-6 py-3 text-lg rounded-2xl shadow-lg hover:bg-(--color-primary-light) hover:scale-105 transition-transform flex items-center gap-2">
+            {/* <Button className="bg-(--color-primary) text-white px-6 py-3 text-lg rounded-2xl shadow-lg hover:bg-(--color-primary-light) hover:scale-105 transition-transform flex items-center gap-2">
               <Wrench size={18} /> Explore Capabilities
-            </Button>
+            </Button> */}
+
+            <div className="flex flex-row justify-start items-center gap-3 bg-transparent">
+
+
+              <Button
+                onClick={handleCall}
+                variant="ghost"
+                size="sm"
+                className={`${buttonClasses} bg-white text-black`}
+              >
+                <img className="w-4 h-4" src={phnGif} alt="" />
+                Call us
+              </Button>
+              <Button
+                onClick={handleEmail}
+                variant="ghost"
+                size="sm"
+                className={buttonClasses}
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Email
+              </Button>
+              <Button
+                onClick={handleWhatsApp}
+                variant="ghost"
+                size="sm"
+                className={buttonClasses}
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
 
