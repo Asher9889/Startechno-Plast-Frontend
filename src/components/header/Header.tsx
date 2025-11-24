@@ -87,7 +87,7 @@ const Header = () => {
               <Sidebar />
             </aside>
             {/* logo */}
-            <div className="flex justify-end items-center gap-4">
+            <div className="flex justify-end items-center gap-6">
               <img className="lg:w-20 w-16" src={logo} alt="" />
               <Link to="/">
                 <h1 className="hidden lg:inline text-2xl text-nowrap font-semibold">Star Technoplast</h1>
