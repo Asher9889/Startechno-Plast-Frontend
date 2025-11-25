@@ -78,7 +78,7 @@ export default function HeroSection() {
 
         {/* CONTACT FORM */}
         <div className="flex flex-1 justify-end">
-          <div className="w-md">
+          <div className="w-full mx-auto">
             <BulkEnquiryForm />
           </div>
         </div>
