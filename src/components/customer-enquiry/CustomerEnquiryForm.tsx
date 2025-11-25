@@ -112,7 +112,7 @@ export default function CustomerEnquiryForm() {
             type="submit"
             className="bg-(--color-blue) text-white font-semibold py-4 rounded-lg hover:scale-[0.99] transition"
           >
-            {mutation.isPending ? <Spinner /> : "Submit Enquiry"}
+            {mutation.isPending ? <Spinner className="mx-auto" /> : "Submit Enquiry"}
           </button>
         </form>
       </div>
