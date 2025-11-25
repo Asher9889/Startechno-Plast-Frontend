@@ -1,7 +1,9 @@
 import { z } from "zod";
 
 
-export const categoryOptions = ["Plastic Components", "Injection Moulding", "Tooling Design", "Other"] as const;
+export const categoryOptions = ["Power banks", "Chargers", "Bluetooth Speakers", "Neckbands", "Earbuds", "Electronic Lighters"] as const;
+// const Products = navItems && navItems.filter((item) => item.name === "Products");
+// export const categoryOptions = Products[0].children.map((item) => item.name);
 
 export const BulkEnquirySchema = z.object({
   name: z

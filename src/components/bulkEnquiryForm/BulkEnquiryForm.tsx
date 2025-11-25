@@ -108,7 +108,7 @@ const BulkEnquiryForm = () => {
                   </SelectTrigger>
 
                   <SelectContent>
-                    {categoryOptions.map((option) => (
+                    {categoryOptions.map((option:string) => (
                       <SelectItem key={option} value={option}>
                         {option}
                       </SelectItem>
